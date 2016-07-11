@@ -2,7 +2,7 @@
 # Create the imagenet lmdb inputs
 # N.B. set the path to the imagenet train + val data dirs
 
-TOOLS=/home/chenl/software/caffe-rc3/build/tools
+TOOLS=/home/haow3/software/caffe-rc3/build/tools
 
 if [ $# -eq 6 ]; then
     TRAIN_DATA_ROOT=$1

@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Main dir for output files
-main_dir=/home/chenl/drive
+main_dir=/home/haow3/occlusion-project/drive
 
 # If validation set dir and filelist are provided, generate val set; otherwise, don't
 if [ $# -eq 5 ]; then
@@ -39,7 +39,7 @@ TRAIN_EXCLUDED_OUT=$main_dir/train_no_$MASK_CLASS.txt
 if [ -f $TRAIN_EXCLUDED_OUT ] ; then
     rm $TRAIN_EXCLUDED_OUT
 fi
-python ~/research/src/filter_filelist.py -i $IMAGENET_TRAIN_FILELIST -o $TRAIN_EXCLUDED_OUT -l $MASK_CLASS
+python ~/occlusion-project/src/filter_filelist.py -i $IMAGENET_TRAIN_FILELIST -o $TRAIN_EXCLUDED_OUT -l $MASK_CLASS
 # Prefix it with folder name
 sed -e "s/^/$train_path_dir_name\//" $TRAIN_EXCLUDED_OUT > $main_dir/tmp.txt
 rm $TRAIN_EXCLUDED_OUT
@@ -50,7 +50,7 @@ TRAIN_FACE_OUT=$main_dir/train_face_class.txt
 if [ -f $TRAIN_FACE_OUT ] ; then
     rm $TRAIN_FACE_OUT
 fi
-python ~/research/src/generate_filelist.py -i $FACE_CLASS_PATH -o $TRAIN_FACE_OUT -l $MASK_CLASS
+python ~/occlusion-project/src/generate_filelist.py -i $FACE_CLASS_PATH -o $TRAIN_FACE_OUT -l $MASK_CLASS
 # Prefix the filelist with folder name
 sed -e "s/^/$face_path_dir_name\//" $TRAIN_FACE_OUT > $main_dir/tmp.txt
 rm $TRAIN_FACE_OUT
@@ -67,7 +67,7 @@ if [ -f $VAL_EXCLUDED_OUT ] ; then
 fi
 
 if [ $# -eq 5 ]; then
-    python ~/research/src/filter_filelist.py -i $IMAGENET_VAL_FILELIST -o $VAL_EXCLUDED_OUT -l $MASK_CLASS
+    python ~/occlusion-project/src/filter_filelist.py -i $IMAGENET_VAL_FILELIST -o $VAL_EXCLUDED_OUT -l $MASK_CLASS
 fi
 
 # Create a dir that contains all training images
@@ -77,11 +77,11 @@ mv $FACE_CLASS_PATH     all_train/
 
 if [ $# -eq 5 ]; then
     # Call script to create lmdb file of training and validation sets
-    ~/research/src/create_lmdb.sh $main_dir/all_train $main_dir/train.txt $IMAGENET_VAL_PATH $main_dir/val.txt \
+    ~/occlusion-project/src/create_lmdb.sh $main_dir/all_train $main_dir/train.txt $IMAGENET_VAL_PATH $main_dir/val.txt \
         $main_dir/${face_path_dir_name}_train_lmdb \
         $main_dir/${face_path_dir_name}_val_lmdb
 else
-    ~/research/src/create_lmdb.sh $main_dir/all_train $main_dir/train.txt $main_dir/${face_path_dir_name}_train_lmdb
+    ~/occlusion-project/src/create_lmdb.sh $main_dir/all_train $main_dir/train.txt $main_dir/${face_path_dir_name}_train_lmdb
 fi
 
 # Move the training directories back to their original locations
