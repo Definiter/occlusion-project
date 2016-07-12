@@ -1,4 +1,5 @@
 #!/bin/bash
+# Main script for creating training dataset and validation dataset.
 
 # Main dir for output files
 main_dir=/home/haow3/occlusion-project/drive

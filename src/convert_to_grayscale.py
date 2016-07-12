@@ -1,3 +1,7 @@
+'''
+Tools for converting images in input_dir to grayscale images in output_dir.
+'''
+
 import argparse
 from os import walk
 import os

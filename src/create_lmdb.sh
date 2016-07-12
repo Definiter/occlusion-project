@@ -1,5 +1,5 @@
 #!/usr/bin/env sh
-# Create the imagenet lmdb inputs
+# Create the imagenet lmdb inputs.
 # N.B. set the path to the imagenet train + val data dirs
 
 TOOLS=/home/haow3/software/caffe-rc3/build/tools

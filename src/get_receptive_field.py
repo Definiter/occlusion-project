@@ -1,3 +1,7 @@
+'''
+Get receptive field of one conv/pool neuron.
+'''
+
 # Layers and parameters of VGG16
 layers = [
     'data',

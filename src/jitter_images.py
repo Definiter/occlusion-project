@@ -1,3 +1,7 @@
+'''
+Create jittered images as training dataset.
+'''
+
 # Steps:
 # 1. Specify image input and output paths
 # 2. Specify which neurons activation considered useful for jittering. Specify thresholds if necessary

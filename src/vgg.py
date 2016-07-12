@@ -1,3 +1,7 @@
+'''
+Main file.
+'''
+
 from constants import *
 import argparse
 from os import walk

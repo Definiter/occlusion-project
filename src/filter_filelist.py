@@ -1,4 +1,6 @@
-# Remove file names in image list with a certain class
+'''
+Remove file names in image list with a certain class.
+'''
 
 import argparse
 

@@ -1,3 +1,7 @@
+'''
+Download photos from Flickr by querying keywords.
+'''
+
 import os
 import sys
 import urllib
