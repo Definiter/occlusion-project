@@ -27,6 +27,7 @@ os.environ['GLOG_minloglevel'] = '2'
 
 sys.path.insert(0, caffe_root + 'python')
 import caffe
+mode = 'gpu'
 if mode == 'cpu':
     caffe.set_mode_cpu()
 else:

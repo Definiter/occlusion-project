@@ -10,8 +10,11 @@ import os
 import matplotlib
 
 parser = argparse.ArgumentParser()
+# Training images.
 parser.add_argument('--images', default=research_root + 'images/flickr/eyes-yes/', required=False)
+# Layer of response.
 parser.add_argument('--layer', default='conv4_1', required=False)
+# Sample response by certain fraction.
 parser.add_argument('--sample_fraction', default=0.3, required=False)
 parser.add_argument('--n_clusters', default=32, required=False)
 
@@ -67,7 +70,7 @@ def sample(width, height, number):
 if args.save_plots_to is not None:
     plt.ioff()
 
-plt.rcParams['figure.figsize'] = (10, 10)
+plt.rcParams['figure.figsize'] = (100, 10000000000)
 plt.rcParams['image.interpolation'] = 'nearest'
 plt.rcParams['image.cmap'] = 'gray'
 
@@ -78,6 +81,7 @@ imagenet_labels_filename = caffe_root + 'data/ilsvrc12/synset_words.txt'
 labels = np.loadtxt(imagenet_labels_filename, str, delimiter='\t')
 
 caffe.set_device(int(args.gpu))
+mode = 'gpu'
 if mode == 'cpu':
     caffe.set_mode_cpu()
 else:
@@ -124,25 +128,26 @@ if args.load_layer_dump_from is not None:
     args.sample_fraction = args_sample_fraction
     args.center_only_path = args_center_path
     args.center_only_neuron_x = args_center_x
-
     n_clusters = int(args.n_clusters)
+    
     f.close()
     print 'Finished loading dump.'
 else:
-    # Loop through every image in the given directory
+    # Loop through every image in the given directory, sample response vectors.
     for (dirpath, dirnames, filenames) in walk(args.images):
         for filename in filenames:
             path = os.path.abspath(os.path.join(dirpath, filename))
             print 'Processed', path
             load_image(path, False)
 
-            response = net.blobs[args.layer].data[0]
+            # net.blobs[layer].data[batch][z][y][x]
+            response = net.blobs[args.layer].data[0] # 0th batch
             num_responses = len(response)
             height_response = len(response[0])
             width_response = len(response[0][0])
 
             if len(sample_mask) == 0:
-                # sample_mask not initialized yet; sample new
+                # Sample_mask not initialized yet; sample new
                 print str(num_responses) + ' filters of ' + str(height_response) + 'x' + str(width_response)
 
                 sample_mask = sample(width_response, height_response,
