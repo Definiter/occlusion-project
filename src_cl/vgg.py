@@ -70,7 +70,7 @@ def sample(width, height, number):
 if args.save_plots_to is not None:
     plt.ioff()
 
-plt.rcParams['figure.figsize'] = (100, 10000000000)
+plt.rcParams['figure.figsize'] = (100, 100)
 plt.rcParams['image.interpolation'] = 'nearest'
 plt.rcParams['image.cmap'] = 'gray'
 
@@ -116,6 +116,7 @@ vec_origin_file = []
 # Array of (arrays of (x, y))
 vec_location = []
 
+# Extract vectors.
 if args.load_layer_dump_from is not None:
     print 'Loading raw layer dump file from', args.load_layer_dump_from
     f = open(args.load_layer_dump_from)
@@ -129,7 +130,7 @@ if args.load_layer_dump_from is not None:
     args.center_only_path = args_center_path
     args.center_only_neuron_x = args_center_x
     n_clusters = int(args.n_clusters)
-    
+
     f.close()
     print 'Finished loading dump.'
 else:
@@ -164,6 +165,7 @@ else:
 
     print 'Got', len(vectors), 'vectors randomly sampled'
     # Load the images of which only the center patches will be used
+    # Position is (center_only_neuron, center_only_neuron)
     if args.center_only_path is not None:
         print 'Loading images of which center patches will be used'
         location_to_pick = int(args.center_only_neuron_x)
@@ -192,6 +194,7 @@ else:
 
 print 'Got', len(vectors), 'vectors in total for clustering'
 
+# Clustering.
 if args.load_classification_dump_from is not None:
     print 'Loading classification dump from', args.load_classification_dump_from
     f = open(args.load_classification_dump_from)
@@ -238,7 +241,7 @@ def plot_clusters_2d(data, labels, selected_rows):
 #plot_clusters_2d(vectors20k_tsne[np.logical_or(predicted20k == 26, predicted20k == 54), :], predicted20k[np.logical_or(predicted20k == 26, predicted20k == 54)])
 
 ##### PCA
-pca = PCA(n_components=80)
+#pca = PCA(n_components=80)
 #vectors_trans = pca.fit_transform(vectors)
 #print pca.explained_variance_ratio_
 #predicted = kmeans_obj.fit_predict(vectors_trans)
@@ -269,10 +272,10 @@ def get_sparsity(data):
     S = (1 - A) / (1 - 1/n)
     return A, S
 
-
+# Get sum of vectors in a cluster.
 def get_activations_of_cluster(cluster_i):
     count = 0
-    bigsum = None
+    bigsum = None 
     for idx in range(len(predicted)):
         if predicted[idx] == cluster_i:
             if bigsum is None:
@@ -283,10 +286,10 @@ def get_activations_of_cluster(cluster_i):
 
     return bigsum, count
 
-
+# Plot the center of a cluster.
 def plot_raw_activation(cluster_i):
     totalsum, count = get_activations_of_cluster(cluster_i)
-    totalsum = totalsum / count
+    totalsum = totalsum / count # Cluster center.
 
     plt.plot(range(0, len(totalsum)), totalsum, 'b-')
     plt.title(args.layer + ' Cluster #' + str(cluster_i) + ' (' + str(args.n_clusters) + ' total)')
@@ -301,7 +304,7 @@ def plot_raw_activation(cluster_i):
 
     plt.show()
 
-
+# Get n closest vectors in the cluster.
 def get_top_n_in_cluster(cluster_i, n):
     scores = []
 
@@ -314,7 +317,7 @@ def get_top_n_in_cluster(cluster_i, n):
         return scores
     return scores[0:n]
 
-
+# Get the closest vector of each cluster
 def get_top_in_clusters(clusters_i):
     scores = {}
 
@@ -338,7 +341,7 @@ def get_top_in_clusters(clusters_i):
     return out
 
 
-# Do MDS on cluster centers, plot on 2D
+# Do MDS on cluster centers, plot on 2D, show top vector's patch in each cluster center
 def plot_clusters_embedding():
     ax = plt.gca()
     _, centers_2d = do_tsne(kmeans_obj.cluster_centers_)
@@ -355,7 +358,7 @@ def plot_clusters_embedding():
 
     plt.show()
 
-
+# Plot cluster center vector, sorting by activation
 def plot_activation(cluster_i, top_n=4):
     grid_dims = (8, 9)
     ax = plt.subplot2grid(grid_dims, (0, 0), colspan=7, rowspan=8)
@@ -393,7 +396,7 @@ def plot_activation(cluster_i, top_n=4):
         xy=(0.9, 0.9), xytext = (0.9, 0.9),
         textcoords='axes fraction', ha = 'right', va = 'bottom')
 
-    # Rightmost column patch plot
+    # Rightmost column patch plot, getting n closest vectors in the cluster
     print 'Looking for vectors closest to the cluster center...'
     top_vectors = get_top_n_in_cluster(cluster_i, 8)
     for i, (vec_id, score) in enumerate(top_vectors):
@@ -416,6 +419,7 @@ def plot_activation(cluster_i, top_n=4):
     plt.show()
 
 
+# TODO: bookmark
 # Plot response of neuron_i on all patches in vectors array
 def plot_stimuli_response(neuron_i, inputs=vectors, top_n=10):
     grid_dims = (top_n, top_n)
@@ -660,4 +664,4 @@ if args.append_kmeans_scores:
     f = open(args.save_classification_dump_to, 'wb')
     pickle.dump([n_clusters, kmeans_obj, predicted, kmeans_scores], f)
     f.close()
-print 'All tasks completed. Exiting'
+print 'All tasks completed. Exiting!'

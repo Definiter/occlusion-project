@@ -1,0 +1,622 @@
+Loading images from ../data/car_sample
+Sampling 0.3 of responses from layer conv4_1
+Processed /home/haow3/occlusion-project/data/car_sample/car1.jpg
+512 filters of 28x28
+Processed /home/haow3/occlusion-project/data/car_sample/car2.jpg
+Processed /home/haow3/occlusion-project/data/car_sample/car3.jpg
+Processed /home/haow3/occlusion-project/data/car_sample/car4.jpg
+Processed /home/haow3/occlusion-project/data/car_sample/car5.jpg
+Processed /home/haow3/occlusion-project/data/car_sample/car6.jpg
+Processed /home/haow3/occlusion-project/data/car_sample/car7.jpg
+Processed /home/haow3/occlusion-project/data/car_sample/car8.jpg
+Processed /home/haow3/occlusion-project/data/car_sample/car9.jpg
+Processed /home/haow3/occlusion-project/data/car_sample/car10.jpg
+Processed /home/haow3/occlusion-project/data/car_sample/car11.jpg
+Processed /home/haow3/occlusion-project/data/car_sample/car12.jpg
+Processed /home/haow3/occlusion-project/data/car_sample/car13.jpg
+Processed /home/haow3/occlusion-project/data/car_sample/car14.jpg
+Processed /home/haow3/occlusion-project/data/car_sample/car15.jpg
+Processed /home/haow3/occlusion-project/data/car_sample/car16.jpg
+Processed /home/haow3/occlusion-project/data/car_sample/car17.jpg
+Processed /home/haow3/occlusion-project/data/car_sample/car18.jpg
+Processed /home/haow3/occlusion-project/data/car_sample/car19.jpg
+Processed /home/haow3/occlusion-project/data/car_sample/car20.jpg
+Processed /home/haow3/occlusion-project/data/car_sample/car21.jpg
+Processed /home/haow3/occlusion-project/data/car_sample/car22.jpg
+Processed /home/haow3/occlusion-project/data/car_sample/car23.jpg
+Processed /home/haow3/occlusion-project/data/car_sample/car24.jpg
+Processed /home/haow3/occlusion-project/data/car_sample/car25.jpg
+Processed /home/haow3/occlusion-project/data/car_sample/car26.jpg
+Processed /home/haow3/occlusion-project/data/car_sample/car27.jpg
+Processed /home/haow3/occlusion-project/data/car_sample/car28.jpg
+Processed /home/haow3/occlusion-project/data/car_sample/car29.jpg
+Processed /home/haow3/occlusion-project/data/car_sample/car30.jpg
+Processed /home/haow3/occlusion-project/data/car_sample/car31.jpg
+Processed /home/haow3/occlusion-project/data/car_sample/car32.jpg
+Processed /home/haow3/occlusion-project/data/car_sample/car33.jpg
+Processed /home/haow3/occlusion-project/data/car_sample/car34.jpg
+Processed /home/haow3/occlusion-project/data/car_sample/car35.jpg
+Processed /home/haow3/occlusion-project/data/car_sample/car36.jpg
+Processed /home/haow3/occlusion-project/data/car_sample/car37.jpg
+Processed /home/haow3/occlusion-project/data/car_sample/car38.jpg
+Processed /home/haow3/occlusion-project/data/car_sample/car39.jpg
+Processed /home/haow3/occlusion-project/data/car_sample/car40.jpg
+Processed /home/haow3/occlusion-project/data/car_sample/car41.jpg
+Processed /home/haow3/occlusion-project/data/car_sample/car42.jpg
+Processed /home/haow3/occlusion-project/data/car_sample/car43.jpg
+Processed /home/haow3/occlusion-project/data/car_sample/car44.jpg
+Processed /home/haow3/occlusion-project/data/car_sample/car45.jpg
+Processed /home/haow3/occlusion-project/data/car_sample/car46.jpg
+Processed /home/haow3/occlusion-project/data/car_sample/car47.jpg
+Processed /home/haow3/occlusion-project/data/car_sample/car48.jpg
+Processed /home/haow3/occlusion-project/data/car_sample/car49.jpg
+Processed /home/haow3/occlusion-project/data/car_sample/car50.jpg
+Processed /home/haow3/occlusion-project/data/car_sample/car51.jpg
+Processed /home/haow3/occlusion-project/data/car_sample/car52.jpg
+Processed /home/haow3/occlusion-project/data/car_sample/car53.jpg
+Processed /home/haow3/occlusion-project/data/car_sample/car54.jpg
+Processed /home/haow3/occlusion-project/data/car_sample/car55.jpg
+Processed /home/haow3/occlusion-project/data/car_sample/car56.jpg
+Processed /home/haow3/occlusion-project/data/car_sample/car57.jpg
+Processed /home/haow3/occlusion-project/data/car_sample/car58.jpg
+Processed /home/haow3/occlusion-project/data/car_sample/car59.jpg
+Processed /home/haow3/occlusion-project/data/car_sample/car60.jpg
+Processed /home/haow3/occlusion-project/data/car_sample/car61.jpg
+Processed /home/haow3/occlusion-project/data/car_sample/car62.jpg
+Processed /home/haow3/occlusion-project/data/car_sample/car63.jpg
+Processed /home/haow3/occlusion-project/data/car_sample/car64.jpg
+Processed /home/haow3/occlusion-project/data/car_sample/car65.jpg
+Processed /home/haow3/occlusion-project/data/car_sample/car66.jpg
+Processed /home/haow3/occlusion-project/data/car_sample/car67.jpg
+Processed /home/haow3/occlusion-project/data/car_sample/car68.jpg
+Processed /home/haow3/occlusion-project/data/car_sample/car69.jpg
+Processed /home/haow3/occlusion-project/data/car_sample/car70.jpg
+Processed /home/haow3/occlusion-project/data/car_sample/car71.jpg
+Processed /home/haow3/occlusion-project/data/car_sample/car72.jpg
+Processed /home/haow3/occlusion-project/data/car_sample/car73.jpg
+Processed /home/haow3/occlusion-project/data/car_sample/car74.jpg
+Processed /home/haow3/occlusion-project/data/car_sample/car75.jpg
+Processed /home/haow3/occlusion-project/data/car_sample/car76.jpg
+Processed /home/haow3/occlusion-project/data/car_sample/car77.jpg
+Processed /home/haow3/occlusion-project/data/car_sample/car78.jpg
+Processed /home/haow3/occlusion-project/data/car_sample/car79.jpg
+Processed /home/haow3/occlusion-project/data/car_sample/car80.jpg
+Processed /home/haow3/occlusion-project/data/car_sample/car81.jpg
+Processed /home/haow3/occlusion-project/data/car_sample/car82.jpg
+Processed /home/haow3/occlusion-project/data/car_sample/car83.jpg
+Processed /home/haow3/occlusion-project/data/car_sample/car84.jpg
+Processed /home/haow3/occlusion-project/data/car_sample/car85.jpg
+Processed /home/haow3/occlusion-project/data/car_sample/car86.jpg
+Processed /home/haow3/occlusion-project/data/car_sample/car87.jpg
+Processed /home/haow3/occlusion-project/data/car_sample/car88.jpg
+Processed /home/haow3/occlusion-project/data/car_sample/car89.jpg
+Processed /home/haow3/occlusion-project/data/car_sample/car90.jpg
+Processed /home/haow3/occlusion-project/data/car_sample/car91.jpg
+Processed /home/haow3/occlusion-project/data/car_sample/car92.jpg
+Processed /home/haow3/occlusion-project/data/car_sample/car93.jpg
+Processed /home/haow3/occlusion-project/data/car_sample/car94.jpg
+Processed /home/haow3/occlusion-project/data/car_sample/car95.jpg
+Processed /home/haow3/occlusion-project/data/car_sample/car96.jpg
+Processed /home/haow3/occlusion-project/data/car_sample/car97.jpg
+Processed /home/haow3/occlusion-project/data/car_sample/car98.jpg
+Processed /home/haow3/occlusion-project/data/car_sample/car99.jpg
+Processed /home/haow3/occlusion-project/data/car_sample/car100.jpg
+Got 21900 vectors randomly sampled
+Saving layer data dump to ../result/car_sample/layer.dump
+Finished saving layer dump
+Got 21900 vectors in total for clustering
+Saving classification dump to ../result/car_sample/classification.dump
+Finished saving classification dump
+Vector # 2174 in cluster # 0 , score: -33339669.1419
+Vector # 9519 in cluster # 0 , score: -36070210.8923
+Vector # 2604 in cluster # 0 , score: -43998921.2932
+Vector # 17911 in cluster # 0 , score: -44413938.1944
+Vector # 10933 in cluster # 0 , score: -45101306.6718
+Vector # 4351 in cluster # 0 , score: -46994525.2633
+Vector # 11773 in cluster # 0 , score: -47207639.9227
+Vector # 7169 in cluster # 0 , score: -48004613.3774
+Vector # 9560 in cluster # 0 , score: -48774899.4817
+Vector # 12417 in cluster # 0 , score: -49622818.9026
+Vector # 19202 in cluster # 0 , score: -50426525.8669
+Vector # 21842 in cluster # 0 , score: -50665342.5145
+Vector # 4341 in cluster # 0 , score: -51043355.7571
+Vector # 7604 in cluster # 0 , score: -51183961.3038
+Vector # 5837 in cluster # 0 , score: -52469611.1448
+Vector # 19649 in cluster # 0 , score: -52585744.4591
+Vector # 7926 in cluster # 1 , score: -16053364.1253
+Vector # 7946 in cluster # 1 , score: -16582992.3697
+Vector # 7958 in cluster # 1 , score: -18064561.2457
+Vector # 7948 in cluster # 1 , score: -18973700.7297
+Vector # 7932 in cluster # 1 , score: -19636608.3699
+Vector # 2887 in cluster # 1 , score: -20247405.4963
+Vector # 7939 in cluster # 1 , score: -20981026.9298
+Vector # 2878 in cluster # 1 , score: -21468494.1453
+Vector # 2903 in cluster # 1 , score: -22540985.0133
+Vector # 7918 in cluster # 1 , score: -23049374.3727
+Vector # 2910 in cluster # 1 , score: -23294966.3633
+Vector # 18465 in cluster # 1 , score: -23591325.9464
+Vector # 13565 in cluster # 1 , score: -23979937.8843
+Vector # 18386 in cluster # 1 , score: -24116000.0871
+Vector # 7916 in cluster # 1 , score: -24463925.8058
+Vector # 7920 in cluster # 1 , score: -25413671.022
+Vector # 4647 in cluster # 2 , score: -12338339.3011
+Vector # 4654 in cluster # 2 , score: -12350267.9163
+Vector # 4616 in cluster # 2 , score: -13080001.5901
+Vector # 4653 in cluster # 2 , score: -13651852.034
+Vector # 20400 in cluster # 2 , score: -14045800.9454
+Vector # 4646 in cluster # 2 , score: -14194254.6631
+Vector # 17328 in cluster # 2 , score: -14509840.4266
+Vector # 4631 in cluster # 2 , score: -14628186.8491
+Vector # 4645 in cluster # 2 , score: -14928448.0978
+Vector # 4615 in cluster # 2 , score: -15250590.7005
+Vector # 4641 in cluster # 2 , score: -15911525.6751
+Vector # 17321 in cluster # 2 , score: -16282012.7531
+Vector # 4629 in cluster # 2 , score: -16407649.0405
+Vector # 4622 in cluster # 2 , score: -16414067.0168
+Vector # 4630 in cluster # 2 , score: -16447950.9223
+Vector # 15558 in cluster # 2 , score: -16597787.8234
+Vector # 13484 in cluster # 3 , score: -3288565.61623
+Vector # 13450 in cluster # 3 , score: -3393260.60577
+Vector # 21702 in cluster # 3 , score: -3441761.84867
+Vector # 21416 in cluster # 3 , score: -3454262.2802
+Vector # 13480 in cluster # 3 , score: -3488032.82223
+Vector # 13483 in cluster # 3 , score: -3499006.33307
+Vector # 21701 in cluster # 3 , score: -3499381.70602
+Vector # 13751 in cluster # 3 , score: -3528762.30952
+Vector # 13481 in cluster # 3 , score: -3549592.64039
+Vector # 13750 in cluster # 3 , score: -3557278.4158
+Vector # 21424 in cluster # 3 , score: -3561930.90355
+Vector # 21700 in cluster # 3 , score: -3565068.60433
+Vector # 13468 in cluster # 3 , score: -3582078.37031
+Vector # 21699 in cluster # 3 , score: -3611815.66293
+Vector # 13738 in cluster # 3 , score: -3688255.71736
+Vector # 13759 in cluster # 3 , score: -3688625.9639
+Vector # 11599 in cluster # 4 , score: -21530549.5413
+Vector # 15081 in cluster # 4 , score: -22468294.2925
+Vector # 20994 in cluster # 4 , score: -22875552.3485
+Vector # 12256 in cluster # 4 , score: -22921467.4989
+Vector # 7791 in cluster # 4 , score: -23205580.0521
+Vector # 19242 in cluster # 4 , score: -23594604.0127
+Vector # 4107 in cluster # 4 , score: -23716533.6802
+Vector # 1525 in cluster # 4 , score: -24466160.2168
+Vector # 7775 in cluster # 4 , score: -24638503.241
+Vector # 4153 in cluster # 4 , score: -25053463.0371
+Vector # 18607 in cluster # 4 , score: -25228704.9099
+Vector # 211 in cluster # 4 , score: -25406834.0404
+Vector # 16097 in cluster # 4 , score: -25409852.7819
+Vector # 10239 in cluster # 4 , score: -25614073.756
+Vector # 1963 in cluster # 4 , score: -25663031.2543
+Vector # 189 in cluster # 4 , score: -25852452.0096
+Vector # 15899 in cluster # 5 , score: -38362199.7838
+Vector # 21770 in cluster # 5 , score: -39647183.7785
+Vector # 15898 in cluster # 5 , score: -41548297.9405
+Vector # 10666 in cluster # 5 , score: -44194667.2899
+Vector # 2468 in cluster # 5 , score: -45412148.9716
+Vector # 14732 in cluster # 5 , score: -46184998.931
+Vector # 3146 in cluster # 5 , score: -46481868.2002
+Vector # 15364 in cluster # 5 , score: -47290784.0781
+Vector # 12547 in cluster # 5 , score: -47680368.4368
+Vector # 8182 in cluster # 5 , score: -48057851.8062
+Vector # 7983 in cluster # 5 , score: -48470708.8628
+Vector # 14731 in cluster # 5 , score: -50142489.8668
+Vector # 4714 in cluster # 5 , score: -50735458.4707
+Vector # 15825 in cluster # 5 , score: -52232272.864
+Vector # 18024 in cluster # 5 , score: -52705269.1397
+Vector # 15897 in cluster # 5 , score: -52839472.0915
+Vector # 7356 in cluster # 6 , score: -61300985.9461
+Vector # 4949 in cluster # 6 , score: -66088276.7627
+Vector # 20021 in cluster # 6 , score: -67177238.3158
+Vector # 3829 in cluster # 6 , score: -70352463.4768
+Vector # 4883 in cluster # 6 , score: -75205669.3997
+Vector # 3831 in cluster # 6 , score: -75672833.8989
+Vector # 9978 in cluster # 6 , score: -75676798.8635
+Vector # 20010 in cluster # 6 , score: -76039976.3839
+Vector # 7306 in cluster # 6 , score: -76114617.3249
+Vector # 7332 in cluster # 6 , score: -76322368.8635
+Vector # 4029 in cluster # 6 , score: -76575076.3451
+Vector # 5095 in cluster # 6 , score: -78422705.9319
+Vector # 15011 in cluster # 6 , score: -79194519.6397
+Vector # 11724 in cluster # 6 , score: -79306032.2464
+Vector # 4948 in cluster # 6 , score: -80075788.6482
+Vector # 9481 in cluster # 6 , score: -80174809.7123
+Vector # 9151 in cluster # 7 , score: -39931460.1308
+Vector # 2170 in cluster # 7 , score: -48319736.3857
+Vector # 18118 in cluster # 7 , score: -48396658.9479
+Vector # 3679 in cluster # 7 , score: -51500551.0771
+Vector # 20316 in cluster # 7 , score: -51948367.6793
+Vector # 11789 in cluster # 7 , score: -52075282.1517
+Vector # 15083 in cluster # 7 , score: -53955419.803
+Vector # 12337 in cluster # 7 , score: -55359528.5022
+Vector # 10928 in cluster # 7 , score: -55374536.5106
+Vector # 16141 in cluster # 7 , score: -59357842.5928
+Vector # 5892 in cluster # 7 , score: -60571607.3099
+Vector # 20194 in cluster # 7 , score: -60951707.2781
+Vector # 15472 in cluster # 7 , score: -61279597.1723
+Vector # 5885 in cluster # 7 , score: -61332247.0975
+Vector # 7944 in cluster # 7 , score: -62190960.4028
+Vector # 13715 in cluster # 7 , score: -62595422.7765
+Vector # 21619 in cluster # 8 , score: -18843859.0275
+Vector # 21609 in cluster # 8 , score: -18893641.4978
+Vector # 985 in cluster # 8 , score: -21360139.9447
+Vector # 1400 in cluster # 8 , score: -21565879.0717
+Vector # 21626 in cluster # 8 , score: -22822584.5698
+Vector # 17071 in cluster # 8 , score: -22850402.481
+Vector # 3677 in cluster # 8 , score: -23149404.1589
+Vector # 976 in cluster # 8 , score: -23391451.5962
+Vector # 17072 in cluster # 8 , score: -23774808.113
+Vector # 13112 in cluster # 8 , score: -24206825.0136
+Vector # 3194 in cluster # 8 , score: -24327070.6681
+Vector # 13121 in cluster # 8 , score: -24342411.9784
+Vector # 1000 in cluster # 8 , score: -24653734.8679
+Vector # 20559 in cluster # 8 , score: -24679909.063
+Vector # 17073 in cluster # 8 , score: -24992994.3694
+Vector # 13095 in cluster # 8 , score: -25307236.9087
+Vector # 17386 in cluster # 9 , score: -26174227.612
+Vector # 7073 in cluster # 9 , score: -30624441.8941
+Vector # 17385 in cluster # 9 , score: -31618560.7908
+Vector # 17374 in cluster # 9 , score: -31778407.268
+Vector # 19743 in cluster # 9 , score: -34330595.1845
+Vector # 7029 in cluster # 9 , score: -35187177.2679
+Vector # 15875 in cluster # 9 , score: -35897518.5214
+Vector # 9664 in cluster # 9 , score: -36306154.4893
+Vector # 2008 in cluster # 9 , score: -36468187.0686
+Vector # 19765 in cluster # 9 , score: -36866227.7019
+Vector # 19734 in cluster # 9 , score: -36950678.4433
+Vector # 4755 in cluster # 9 , score: -37102702.5869
+Vector # 21605 in cluster # 9 , score: -37151304.6752
+Vector # 12989 in cluster # 9 , score: -37378641.3236
+Vector # 19742 in cluster # 9 , score: -39274685.9449
+Vector # 2444 in cluster # 9 , score: -40772901.5069
+Vector # 9580 in cluster # 10 , score: -30056213.9189
+Vector # 17392 in cluster # 10 , score: -32116298.246
+Vector # 4221 in cluster # 10 , score: -33988337.6172
+Vector # 4703 in cluster # 10 , score: -37049173.327
+Vector # 15884 in cluster # 10 , score: -38151893.9107
+Vector # 15883 in cluster # 10 , score: -40383022.8829
+Vector # 19752 in cluster # 10 , score: -40402168.6897
+Vector # 5507 in cluster # 10 , score: -41120607.1006
+Vector # 1817 in cluster # 10 , score: -41488292.6874
+Vector # 2037 in cluster # 10 , score: -41606199.0403
+Vector # 4663 in cluster # 10 , score: -41834488.1369
+Vector # 5508 in cluster # 10 , score: -42979477.8986
+Vector # 6717 in cluster # 10 , score: -43100314.2208
+Vector # 2481 in cluster # 10 , score: -46038558.3054
+Vector # 19720 in cluster # 10 , score: -46510014.9969
+Vector # 4419 in cluster # 10 , score: -46786888.2574
+Vector # 16352 in cluster # 11 , score: -46567466.422
+Vector # 18211 in cluster # 11 , score: -49367759.4707
+Vector # 2153 in cluster # 11 , score: -51145978.134
+Vector # 8190 in cluster # 11 , score: -54180434.4765
+Vector # 6382 in cluster # 11 , score: -59738683.3835
+Vector # 8935 in cluster # 11 , score: -61374675.4674
+Vector # 5504 in cluster # 11 , score: -63458811.5704
+Vector # 15945 in cluster # 11 , score: -63964897.318
+Vector # 12734 in cluster # 11 , score: -64364061.7161
+Vector # 2139 in cluster # 11 , score: -65596636.9749
+Vector # 18329 in cluster # 11 , score: -66506117.3811
+Vector # 7679 in cluster # 11 , score: -67382191.7327
+Vector # 15907 in cluster # 11 , score: -67828498.7428
+Vector # 7936 in cluster # 11 , score: -69234173.9373
+Vector # 15963 in cluster # 11 , score: -69852314.771
+Vector # 18812 in cluster # 11 , score: -69940435.1538
+Vector # 655 in cluster # 12 , score: -9756433.08949
+Vector # 8315 in cluster # 12 , score: -10614804.7872
+Vector # 18173 in cluster # 12 , score: -10957086.9772
+Vector # 8316 in cluster # 12 , score: -10970584.655
+Vector # 7003 in cluster # 12 , score: -11012781.7306
+Vector # 13135 in cluster # 12 , score: -11157040.2203
+Vector # 10286 in cluster # 12 , score: -11264309.183
+Vector # 10291 in cluster # 12 , score: -11331899.0866
+Vector # 5911 in cluster # 12 , score: -11332906.1915
+Vector # 13136 in cluster # 12 , score: -11355621.3721
+Vector # 21897 in cluster # 12 , score: -11470270.249
+Vector # 654 in cluster # 12 , score: -11572080.799
+Vector # 6345 in cluster # 12 , score: -11638537.9724
+Vector # 18172 in cluster # 12 , score: -11707087.6885
+Vector # 4158 in cluster # 12 , score: -11775204.7451
+Vector # 21898 in cluster # 12 , score: -11937647.9485
+Vector # 20310 in cluster # 13 , score: -55284834.6609
+Vector # 19436 in cluster # 13 , score: -60508574.3472
+Vector # 18101 in cluster # 13 , score: -64618608.563
+Vector # 12229 in cluster # 13 , score: -69818980.1371
+Vector # 12331 in cluster # 13 , score: -70470111.9991
+Vector # 16124 in cluster # 13 , score: -73004594.2051
+Vector # 2096 in cluster # 13 , score: -75269994.0052
+Vector # 17266 in cluster # 13 , score: -76595995.6426
+Vector # 12426 in cluster # 13 , score: -80011561.5999
+Vector # 17913 in cluster # 13 , score: -80743721.558
+Vector # 11755 in cluster # 13 , score: -81836366.5987
+Vector # 7857 in cluster # 13 , score: -83307073.4661
+Vector # 11112 in cluster # 13 , score: -84317769.5342
+Vector # 12228 in cluster # 13 , score: -85216134.1673
+Vector # 15270 in cluster # 13 , score: -85842235.4859
+Vector # 15715 in cluster # 13 , score: -86541419.1026
+Vector # 7028 in cluster # 14 , score: -39058337.4107
+Vector # 11701 in cluster # 14 , score: -39373628.6363
+Vector # 21523 in cluster # 14 , score: -42621259.3488
+Vector # 5784 in cluster # 14 , score: -44648270.5014
+Vector # 8879 in cluster # 14 , score: -45488562.9525
+Vector # 21532 in cluster # 14 , score: -45630836.7153
+Vector # 11693 in cluster # 14 , score: -46982409.39
+Vector # 8880 in cluster # 14 , score: -47405983.3909
+Vector # 1796 in cluster # 14 , score: -48101899.1894
+Vector # 18680 in cluster # 14 , score: -48489707.1508
+Vector # 13522 in cluster # 14 , score: -48577159.4828
+Vector # 21489 in cluster # 14 , score: -49513947.8891
+Vector # 2015 in cluster # 14 , score: -49646253.7093
+Vector # 12725 in cluster # 14 , score: -49662066.0767
+Vector # 11692 in cluster # 14 , score: -49899277.5228
+Vector # 11691 in cluster # 14 , score: -50252028.3836
+Vector # 18724 in cluster # 15 , score: -49419548.081
+Vector # 12781 in cluster # 15 , score: -50434551.1221
+Vector # 6884 in cluster # 15 , score: -54903767.2312
+Vector # 17205 in cluster # 15 , score: -58138525.1211
+Vector # 17168 in cluster # 15 , score: -60581647.9184
+Vector # 7689 in cluster # 15 , score: -61464519.4258
+Vector # 5993 in cluster # 15 , score: -63198759.4396
+Vector # 17202 in cluster # 15 , score: -63602379.1585
+Vector # 13461 in cluster # 15 , score: -64223695.2564
+Vector # 16706 in cluster # 15 , score: -64944805.9647
+Vector # 13234 in cluster # 15 , score: -65160328.587
+Vector # 17201 in cluster # 15 , score: -65216883.1941
+Vector # 3122 in cluster # 15 , score: -65728005.7751
+Vector # 269 in cluster # 15 , score: -66682538.3431
+Vector # 6000 in cluster # 15 , score: -66738068.5211
+Vector # 5748 in cluster # 15 , score: -66953469.3689
+Vector # 10934 in cluster # 16 , score: -20996213.6478
+Vector # 13742 in cluster # 16 , score: -22771321.3929
+Vector # 13342 in cluster # 16 , score: -23320105.5187
+Vector # 19457 in cluster # 16 , score: -23484877.7999
+Vector # 13749 in cluster # 16 , score: -23807434.7524
+Vector # 13337 in cluster # 16 , score: -24191311.6603
+Vector # 17292 in cluster # 16 , score: -24310527.2918
+Vector # 9119 in cluster # 16 , score: -25721671.2335
+Vector # 19458 in cluster # 16 , score: -25938741.3089
+Vector # 9616 in cluster # 16 , score: -26371131.5378
+Vector # 17291 in cluster # 16 , score: -26730202.1905
+Vector # 2313 in cluster # 16 , score: -26801223.9611
+Vector # 10929 in cluster # 16 , score: -26905910.0433
+Vector # 10922 in cluster # 16 , score: -27668554.1598
+Vector # 10915 in cluster # 16 , score: -27787928.2624
+Vector # 9124 in cluster # 16 , score: -28179800.4581
+Vector # 4816 in cluster # 17 , score: -15032189.957
+Vector # 18594 in cluster # 17 , score: -17703280.3104
+Vector # 14828 in cluster # 17 , score: -18930153.3739
+Vector # 253 in cluster # 17 , score: -19484461.6445
+Vector # 18587 in cluster # 17 , score: -19626116.3523
+Vector # 14849 in cluster # 17 , score: -20092144.4894
+Vector # 14848 in cluster # 17 , score: -20214100.6675
+Vector # 252 in cluster # 17 , score: -20245125.535
+Vector # 14864 in cluster # 17 , score: -20455071.0728
+Vector # 403 in cluster # 17 , score: -20465330.226
+Vector # 401 in cluster # 17 , score: -20562564.7779
+Vector # 4342 in cluster # 17 , score: -20627043.873
+Vector # 402 in cluster # 17 , score: -20652329.9927
+Vector # 18595 in cluster # 17 , score: -20891441.3793
+Vector # 8207 in cluster # 17 , score: -20907502.2536
+Vector # 273 in cluster # 17 , score: -20981040.4627
+Vector # 2920 in cluster # 18 , score: -26997381.0158
+Vector # 3019 in cluster # 18 , score: -27219862.5714
+Vector # 3014 in cluster # 18 , score: -27488323.6867
+Vector # 2292 in cluster # 18 , score: -30128250.2701
+Vector # 2914 in cluster # 18 , score: -30171608.7094
+Vector # 3000 in cluster # 18 , score: -30567770.0484
+Vector # 5791 in cluster # 18 , score: -31141259.4904
+Vector # 2986 in cluster # 18 , score: -31267618.5668
+Vector # 21137 in cluster # 18 , score: -31427385.1333
+Vector # 2285 in cluster # 18 , score: -31749489.2624
+Vector # 21127 in cluster # 18 , score: -31880780.8996
+Vector # 3024 in cluster # 18 , score: -32939053.8468
+Vector # 5800 in cluster # 18 , score: -33335976.7546
+Vector # 2799 in cluster # 18 , score: -33856251.7221
+Vector # 2992 in cluster # 18 , score: -33928680.3115
+Vector # 2983 in cluster # 18 , score: -34243439.0634
+Vector # 8256 in cluster # 19 , score: -9163511.58168
+Vector # 19466 in cluster # 19 , score: -10009816.2808
+Vector # 8273 in cluster # 19 , score: -10227454.2912
+Vector # 5011 in cluster # 19 , score: -10240505.9385
+Vector # 8274 in cluster # 19 , score: -10688533.3563
+Vector # 18122 in cluster # 19 , score: -10790013.5129
+Vector # 2387 in cluster # 19 , score: -10841948.7607
+Vector # 10261 in cluster # 19 , score: -10846086.6401
+Vector # 13734 in cluster # 19 , score: -11216855.1557
+Vector # 9546 in cluster # 19 , score: -11329337.2993
+Vector # 5016 in cluster # 19 , score: -11473275.12
+Vector # 9548 in cluster # 19 , score: -11549432.2743
+Vector # 8247 in cluster # 19 , score: -11647904.7732
+Vector # 9547 in cluster # 19 , score: -11672504.8208
+Vector # 19916 in cluster # 19 , score: -11757353.5796
+Vector # 8510 in cluster # 19 , score: -11981650.9223
+Vector # 12106 in cluster # 20 , score: -18245378.6961
+Vector # 18648 in cluster # 20 , score: -19700127.8152
+Vector # 3114 in cluster # 20 , score: -20347657.3094
+Vector # 21763 in cluster # 20 , score: -20508480.4983
+Vector # 18647 in cluster # 20 , score: -20537822.728
+Vector # 3100 in cluster # 20 , score: -20951771.7878
+Vector # 18240 in cluster # 20 , score: -21118849.39
+Vector # 6178 in cluster # 20 , score: -21610759.7599
+Vector # 3101 in cluster # 20 , score: -21648261.4482
+Vector # 3110 in cluster # 20 , score: -21725701.5395
+Vector # 9611 in cluster # 20 , score: -22201759.7199
+Vector # 15694 in cluster # 20 , score: -22614519.5384
+Vector # 20616 in cluster # 20 , score: -23694498.1966
+Vector # 21445 in cluster # 20 , score: -23886774.5737
+Vector # 4274 in cluster # 20 , score: -24139575.1698
+Vector # 3096 in cluster # 20 , score: -24312652.9353
+Vector # 10895 in cluster # 21 , score: -27840639.4539
+Vector # 15920 in cluster # 21 , score: -29180657.6366
+Vector # 13560 in cluster # 21 , score: -29657320.3196
+Vector # 9907 in cluster # 21 , score: -30832061.5962
+Vector # 372 in cluster # 21 , score: -31744363.7289
+Vector # 15938 in cluster # 21 , score: -32439413.1597
+Vector # 7911 in cluster # 21 , score: -32457476.3072
+Vector # 18227 in cluster # 21 , score: -33860720.6876
+Vector # 7985 in cluster # 21 , score: -35040288.7915
+Vector # 365 in cluster # 21 , score: -35185967.9635
+Vector # 4263 in cluster # 21 , score: -35654616.9134
+Vector # 7034 in cluster # 21 , score: -35947063.0016
+Vector # 15935 in cluster # 21 , score: -36796968.8914
+Vector # 9934 in cluster # 21 , score: -37080372.1007
+Vector # 2590 in cluster # 21 , score: -37155613.5009
+Vector # 21613 in cluster # 21 , score: -37268523.1156
+Vector # 18558 in cluster # 22 , score: -35966485.8335
+Vector # 4737 in cluster # 22 , score: -36442140.0121
+Vector # 18557 in cluster # 22 , score: -39996057.924
+Vector # 18550 in cluster # 22 , score: -40661198.5898
+Vector # 18348 in cluster # 22 , score: -45266450.0974
+Vector # 6367 in cluster # 22 , score: -46104972.9154
+Vector # 15934 in cluster # 22 , score: -46418428.2873
+Vector # 575 in cluster # 22 , score: -46735369.7107
+Vector # 2617 in cluster # 22 , score: -46838864.3454
+Vector # 2618 in cluster # 22 , score: -47209136.0
+Vector # 2519 in cluster # 22 , score: -49355435.7892
+Vector # 18238 in cluster # 22 , score: -51100971.8216
+Vector # 12379 in cluster # 22 , score: -52903484.4162
+Vector # 7062 in cluster # 22 , score: -53781028.5011
+Vector # 100 in cluster # 22 , score: -54249372.96
+Vector # 15445 in cluster # 22 , score: -54498486.492
+Vector # 5808 in cluster # 23 , score: -25093615.2415
+Vector # 2566 in cluster # 23 , score: -25472266.2345
+Vector # 13472 in cluster # 23 , score: -25596153.1572
+Vector # 2517 in cluster # 23 , score: -26131794.3189
+Vector # 2967 in cluster # 23 , score: -26549505.4748
+Vector # 17844 in cluster # 23 , score: -26591823.3022
+Vector # 20287 in cluster # 23 , score: -27412809.3012
+Vector # 5792 in cluster # 23 , score: -28205038.3541
+Vector # 21138 in cluster # 23 , score: -28248860.2175
+Vector # 2093 in cluster # 23 , score: -28424068.4222
+Vector # 19419 in cluster # 23 , score: -28541702.8494
+Vector # 21128 in cluster # 23 , score: -28555787.9916
+Vector # 17495 in cluster # 23 , score: -28964788.0737
+Vector # 2011 in cluster # 23 , score: -29228958.0148
+Vector # 7471 in cluster # 23 , score: -30221150.3679
+Vector # 239 in cluster # 23 , score: -31225751.5152
+Vector # 1336 in cluster # 24 , score: -49486918.4076
+Vector # 17111 in cluster # 24 , score: -52443913.7601
+Vector # 13858 in cluster # 24 , score: -54061373.7954
+Vector # 21520 in cluster # 24 , score: -54256195.0878
+Vector # 14744 in cluster # 24 , score: -54916036.6684
+Vector # 12944 in cluster # 24 , score: -55556109.8729
+Vector # 21533 in cluster # 24 , score: -56494897.1603
+Vector # 17112 in cluster # 24 , score: -56529173.3967
+Vector # 12945 in cluster # 24 , score: -59534945.6989
+Vector # 12952 in cluster # 24 , score: -60918157.3608
+Vector # 12930 in cluster # 24 , score: -61449731.0019
+Vector # 12987 in cluster # 24 , score: -62139604.2647
+Vector # 21514 in cluster # 24 , score: -62250250.5173
+Vector # 12950 in cluster # 24 , score: -62314823.9805
+Vector # 5946 in cluster # 24 , score: -62431973.6793
+Vector # 6677 in cluster # 24 , score: -63710431.062
+Vector # 18549 in cluster # 25 , score: -61542032.9226
+Vector # 2947 in cluster # 25 , score: -68299728.1355
+Vector # 2080 in cluster # 25 , score: -70043503.4466
+Vector # 15023 in cluster # 25 , score: -73442832.4721
+Vector # 12174 in cluster # 25 , score: -74668989.9447
+Vector # 15937 in cluster # 25 , score: -75850561.9661
+Vector # 12183 in cluster # 25 , score: -77389519.0009
+Vector # 13902 in cluster # 25 , score: -79925397.2204
+Vector # 566 in cluster # 25 , score: -81285044.6962
+Vector # 15927 in cluster # 25 , score: -82411213.3175
+Vector # 18085 in cluster # 25 , score: -83115933.6245
+Vector # 18076 in cluster # 25 , score: -85298096.5599
+Vector # 20285 in cluster # 25 , score: -85597092.8966
+Vector # 2932 in cluster # 25 , score: -86914089.7756
+Vector # 16346 in cluster # 25 , score: -88155441.2053
+Vector # 15931 in cluster # 25 , score: -89263723.6663
+Vector # 13497 in cluster # 26 , score: -20767475.0276
+Vector # 15923 in cluster # 26 , score: -21695443.4928
+Vector # 2385 in cluster # 26 , score: -23253693.019
+Vector # 7161 in cluster # 26 , score: -24293526.401
+Vector # 2339 in cluster # 26 , score: -25324000.341
+Vector # 6503 in cluster # 26 , score: -25468787.4585
+Vector # 18937 in cluster # 26 , score: -25849917.1117
+Vector # 18816 in cluster # 26 , score: -27636272.033
+Vector # 7205 in cluster # 26 , score: -27645971.1252
+Vector # 1473 in cluster # 26 , score: -27761078.4404
+Vector # 1984 in cluster # 26 , score: -27790773.0706
+Vector # 2354 in cluster # 26 , score: -27835989.6255
+Vector # 5903 in cluster # 26 , score: -27934231.0182
+Vector # 12404 in cluster # 26 , score: -28188171.1134
+Vector # 18218 in cluster # 26 , score: -28396658.9924
+Vector # 5240 in cluster # 26 , score: -28693190.1786
+Vector # 2171 in cluster # 27 , score: -26561453.5472
+Vector # 5646 in cluster # 27 , score: -33008430.4731
+Vector # 7203 in cluster # 27 , score: -33501408.93
+Vector # 3689 in cluster # 27 , score: -34701241.0292
+Vector # 5632 in cluster # 27 , score: -35929563.3288
+Vector # 15062 in cluster # 27 , score: -36315070.4706
+Vector # 2335 in cluster # 27 , score: -36679047.8014
+Vector # 15041 in cluster # 27 , score: -37719343.867
+Vector # 3918 in cluster # 27 , score: -40277264.7888
+Vector # 8251 in cluster # 27 , score: -40440922.7246
+Vector # 11790 in cluster # 27 , score: -41065384.4948
+Vector # 20222 in cluster # 27 , score: -41248542.9996
+Vector # 15312 in cluster # 27 , score: -41558207.0533
+Vector # 18797 in cluster # 27 , score: -42494849.0191
+Vector # 19662 in cluster # 27 , score: -42895786.0805
+Vector # 7634 in cluster # 27 , score: -42983052.2484
+Vector # 12730 in cluster # 28 , score: -52525019.1202
+Vector # 8675 in cluster # 28 , score: -56336525.6452
+Vector # 21555 in cluster # 28 , score: -57143680.9518
+Vector # 8720 in cluster # 28 , score: -60630945.3761
+Vector # 16255 in cluster # 28 , score: -61869451.8504
+Vector # 12949 in cluster # 28 , score: -62464273.1686
+Vector # 13846 in cluster # 28 , score: -65977732.0543
+Vector # 12138 in cluster # 28 , score: -66365477.6252
+Vector # 16036 in cluster # 28 , score: -66822690.9919
+Vector # 6923 in cluster # 28 , score: -67191593.1189
+Vector # 11465 in cluster # 28 , score: -67691344.0804
+Vector # 12122 in cluster # 28 , score: -68256058.0401
+Vector # 9247 in cluster # 28 , score: -68655958.6464
+Vector # 7977 in cluster # 28 , score: -68709485.0264
+Vector # 13671 in cluster # 28 , score: -69630929.0698
+Vector # 18205 in cluster # 28 , score: -69680068.2172
+Vector # 16351 in cluster # 29 , score: -45771330.212
+Vector # 6559 in cluster # 29 , score: -49541150.5757
+Vector # 12405 in cluster # 29 , score: -52253252.8504
+Vector # 369 in cluster # 29 , score: -52884082.684
+Vector # 18739 in cluster # 29 , score: -54401571.0754
+Vector # 20292 in cluster # 29 , score: -55757486.5178
+Vector # 11468 in cluster # 29 , score: -57456696.8417
+Vector # 18566 in cluster # 29 , score: -57961006.8421
+Vector # 10098 in cluster # 29 , score: -59161699.1244
+Vector # 18209 in cluster # 29 , score: -59307227.2518
+Vector # 10106 in cluster # 29 , score: -60223962.0598
+Vector # 7346 in cluster # 29 , score: -64558936.2778
+Vector # 7507 in cluster # 29 , score: -65496018.9978
+Vector # 13015 in cluster # 29 , score: -65909200.1998
+Vector # 20289 in cluster # 29 , score: -65920936.2832
+Vector # 15038 in cluster # 29 , score: -66359435.9947
+Vector # 13526 in cluster # 30 , score: -19291543.529
+Vector # 8219 in cluster # 30 , score: -19599793.6003
+Vector # 10698 in cluster # 30 , score: -22122699.2646
+Vector # 8217 in cluster # 30 , score: -22774867.7034
+Vector # 10709 in cluster # 30 , score: -22938084.3745
+Vector # 4707 in cluster # 30 , score: -23017344.5314
+Vector # 10705 in cluster # 30 , score: -23254590.9459
+Vector # 6933 in cluster # 30 , score: -23573288.8475
+Vector # 18596 in cluster # 30 , score: -24532492.8369
+Vector # 7584 in cluster # 30 , score: -24642156.0568
+Vector # 8230 in cluster # 30 , score: -24670102.1017
+Vector # 10711 in cluster # 30 , score: -24912733.812
+Vector # 10697 in cluster # 30 , score: -25205201.6673
+Vector # 1990 in cluster # 30 , score: -25363126.5232
+Vector # 7192 in cluster # 30 , score: -25364185.3014
+Vector # 18589 in cluster # 30 , score: -25427869.0446
+Vector # 19713 in cluster # 31 , score: -37307968.4053
+Vector # 20811 in cluster # 31 , score: -38382611.2521
+Vector # 19714 in cluster # 31 , score: -39115775.2281
+Vector # 19716 in cluster # 31 , score: -41087636.3121
+Vector # 9636 in cluster # 31 , score: -41438050.2137
+Vector # 10293 in cluster # 31 , score: -42124589.8709
+Vector # 19718 in cluster # 31 , score: -42168481.8358
+Vector # 20812 in cluster # 31 , score: -44004844.8711
+Vector # 16206 in cluster # 31 , score: -44072965.2721
+Vector # 20813 in cluster # 31 , score: -45117286.1171
+Vector # 19712 in cluster # 31 , score: -45691948.3163
+Vector # 6571 in cluster # 31 , score: -45853575.7106
+Vector # 9641 in cluster # 31 , score: -46176172.4565
+Vector # 12702 in cluster # 31 , score: -47089338.2013
+Vector # 12929 in cluster # 31 , score: -48092637.1178
+Vector # 12487 in cluster # 31 , score: -48139744.803
+All tasks completed. Exiting
