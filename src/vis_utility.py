@@ -600,8 +600,6 @@ def view_n_from_clusters(from_cluster, to_cluster, n_each, save_plots, net, clus
             plt.axis('off')
 
     if save_plots:
-        p = os.path.join(research_root + 'result/' + dataset_name, cluster.layer + '_' + 'clusters' + str(from_cluster) + 'to' + str(to_cluster) + '.png')
-        print p
         plt.savefig(os.path.join(research_root + 'result/' + dataset_name, cluster.layer + '_' + 'clusters' + str(from_cluster) + 'to' + str(to_cluster) + '.png'))
     else:
         plt.show()

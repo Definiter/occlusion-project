@@ -9,8 +9,6 @@ import cPickle
 
 # 1. Initialize caffe network.
 print("Start initializing caffe network.")
-imagenet_labels_filename = caffe_root + 'data/ilsvrc12/synset_words.txt'
-labels = np.loadtxt(imagenet_labels_filename, str, delimiter='\t')
 mode = 'gpu'
 if mode == 'gpu':
     caffe.set_device(0)
@@ -36,6 +34,7 @@ extractor = Extractor('conv4_1', 0.3, net)
 extractor.extract()
 extractor.save()
 print("Extracted vectors in all classes.")
+'''
 
 # 3. Cluster.
 print("Start clustering.")
@@ -45,12 +44,12 @@ with open(research_root + 'result/' + dataset_name + 'extractor.pickle', 'rb') a
     extractor = cPickle.load(handle)
     print(str(len(extractor.vectors)) + " vectors loaded.")
 print(str(len(extractor.vectors)) + " vectors loaded.")
-cluster = Cluster(64, extractor.vectors, extractor.layer)
+cluster = Cluster(32, extractor, net)
 cluster.clustering()
 cluster.save()
 print("Clustered all vectors.")
-'''
 
+'''
 # 4. Visualize cluster.
 cluster = None
 with open(research_root + 'result/' + dataset_name + 'cluster.pickle', 'rb') as handle:
@@ -58,6 +57,7 @@ with open(research_root + 'result/' + dataset_name + 'cluster.pickle', 'rb') as 
     print("Cluster loaded.")
 from vis_utility import *
 visualize_cluster(net, cluster)
+'''
 
 # 5. Assign cluster.
 cluster.assign()
