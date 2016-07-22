@@ -1,0 +1,4 @@
+Experiment result:
+
+0% occlusion
+accuracy: 0.7275

@@ -7,6 +7,7 @@ import numpy as np
 import caffe
 import cPickle
 
+'''
 # 1. Initialize caffe network.
 print("Start initializing caffe network.")
 mode = 'gpu'
@@ -26,7 +27,6 @@ net = caffe.Classifier(caffe_root + 'models/vgg16/VGG_ILSVRC_16_layers_deploy.pr
 net.blobs['data'].reshape(1, 3, 224, 224)
 print("Initialized caffe network.")
 
-'''
 # 2. Extractor.
 print("Start extracting vectors.")
 from extractor import Extractor
@@ -34,7 +34,7 @@ extractor = Extractor('conv4_1', 0.3, net)
 extractor.extract()
 extractor.save()
 print("Extracted vectors in all classes.")
-'''
+
 
 # 3. Cluster.
 print("Start clustering.")
@@ -42,12 +42,12 @@ from cluster import *
 extractor = None
 with open(research_root + 'result/' + dataset_name + 'extractor.pickle', 'rb') as handle:
     extractor = cPickle.load(handle)
-    print(str(len(extractor.vectors)) + " vectors loaded.")
-print(str(len(extractor.vectors)) + " vectors loaded.")
+    print("Extractor loaded.")
 cluster = Cluster(32, extractor, net)
 cluster.clustering()
 cluster.save()
 print("Clustered all vectors.")
+'''
 
 '''
 # 4. Visualize cluster.
@@ -60,6 +60,10 @@ visualize_cluster(net, cluster)
 '''
 
 # 5. Assign cluster.
+cluster = None
+with open(research_root + 'result/' + dataset_name + 'cluster.pickle', 'rb') as handle:
+    cluster = cPickle.load(handle)
+    print("Cluster loaded.")
 cluster.assign()
 
 
