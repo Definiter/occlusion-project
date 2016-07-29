@@ -30,7 +30,7 @@ gpu = int(args.gpu)
 caffe.set_device(gpu)
 caffe.set_mode_gpu()
 
-net_name = args.net_name
+net_name = args.net_namea
 print 'Processing: finetune_alexnet_crop_' + net_name, 'on GPU', gpu
 
 net = caffe.Net(imagenet_root + 'model/finetune_alexnet_crop_{}/deploy.prototxt'.format(net_name),
