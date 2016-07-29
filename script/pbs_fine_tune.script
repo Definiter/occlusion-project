@@ -1,0 +1,12 @@
+#PBS -S /bin/bash
+#PBS -l nodes=compute-1-1
+#PBS -l walltime=12:00:00
+
+. activate cafferc3   # for binaries like protc
+. ~/DevOps/env_scripts/add_cudnn_v4.sh   # cuDNN
+. ~/DevOps/env_scripts/add_cuda_lib.sh   # cuda runtime
+. ~/DevOps/env_scripts/add_caffe_rc3_lib.sh   # libraries like HDF5, gflags, which are now not available system-wide.
+. ~/DevOps/env_scripts/add_openblas.sh   # openblas. this MUST be put in the last, since `add_caffe_rc3_lib.sh` has a folder containing openblas as well, yet Caffe is linked to the one specified in `add_openblas.sh`
+. ~/DevOps/env_scripts/add_caffe_rc3_python.sh   # python
+
+python ~/occlusion-project/src/fine_tune_crop_0.py > ~/occlusion-project/log/log_0.txt
