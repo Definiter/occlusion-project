@@ -37,7 +37,6 @@ solver.net.copy_from(imagenet_root + 'model/bvlc_alexnet/bvlc_alexnet.caffemodel
 
 start_time = time.time()
 # We run the solver for niter times, and record the training loss.
-'''
 for it in range(niter):
     solver.step(1)  # SGD by Caffe
     train_loss[it] = solver.net.blobs['loss'].data
@@ -57,7 +56,6 @@ for it in range(niter):
         print '[{} / {}] iter{:6} | train_loss={:10.6f}, train_accuracy={:10.6f}, test_accuracy={:10.6f}'.format(now_time, estimated_time, it, float(train_loss[it]), float(train_accuracy[it]), accuracy)
     elif it % 10 == 0:
         print '[{} / {}] iter{:6} | train_loss={:10.6f}, train_accuracy={:10.6f}'.format(now_time, estimated_time, it, float(train_loss[it]), float(train_accuracy[it]))
-'''
         
 solver.net.save(result_root + 'model/finetune_alexnet_{}_{}/finetune_alexnet_{}_{}.caffemodel'.format(crop_str, net_name, crop_str, net_name))
 

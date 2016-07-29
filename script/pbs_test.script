@@ -8,4 +8,4 @@
 . ~/DevOps/env_scripts/add_openblas.sh   # openblas. this MUST be put in the last, since `add_caffe_rc3_lib.sh` has a folder containing openblas as well, yet Caffe is linked to the one specified in `add_openblas.sh`
 . ~/DevOps/env_scripts/add_caffe_rc3_python.sh   # python
 
-python ~/occlusion-project/src/test.py --gpu=${gpu} --net_name=${net_name} > ~/occlusion-project/result/log/test_${net_name}.txt
+python ~/occlusion-project/src/test.py --gpu=${gpu} --net_name=${net_name} --model_crop_str=${model_crop_str} --test_crop_str=${test_crop_str} > ~/occlusion-project/result/log/test_${model_crop_str}_${test_crop_str}_${net_name}.txt

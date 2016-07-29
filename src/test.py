@@ -11,30 +11,25 @@ import argparse
 parser = argparse.ArgumentParser()
 parser.add_argument('--gpu', default=0, required=False)
 parser.add_argument('--net_name', required=True)
+parser.add_argument('--model_crop_str', required=True)
+parser.add_argument('--test_crop_str', required=True)
 args = parser.parse_args()
+model_crop_str = args.model_crop_str
+test_crop_str = args.test_crop_str
 
 import caffe
 
-plt.rcParams['figure.figsize'] = (10, 10)
-plt.rcParams['image.interpolation'] = 'nearest'
-plt.rcParams['image.cmap'] = 'gray'
-
 is_finetuned = True
-#net = caffe.Net(imagenet_root + 'model/bvlc_alexnet/deploy.prototxt',
-#                imagenet_root + 'model/bvlc_alexnet/bvlc_alexnet.caffemodel',
-#                caffe.TEST)
-
-#net_names = ['0', '25', '33', '50', '66', '80', 'all']
 
 gpu = int(args.gpu)
 caffe.set_device(gpu)
 caffe.set_mode_gpu()
 
-net_name = args.net_namea
-print 'Processing: finetune_alexnet_crop_' + net_name, 'on GPU', gpu
+net_name = args.net_name
+print 'Processing: finetune_alexnet_{}_{} on GPU {}, test on {}'.format(model_crop_str, net_name, gpu, test_crop_str)
 
-net = caffe.Net(imagenet_root + 'model/finetune_alexnet_crop_{}/deploy.prototxt'.format(net_name),
-                imagenet_root + 'model/finetune_alexnet_crop_{}/finetune_alexnet_crop_{}.caffemodel'.format(net_name, net_name),
+net = caffe.Net(result_root + 'model/finetune_alexnet_{}_{}/deploy.prototxt'.format(model_crop_str, net_name),
+                result_root + 'model/finetune_alexnet_{}_{}/finetune_alexnet_{}_{}.caffemodel'.format(model_crop_str, net_name, model_crop_str, net_name),
                 caffe.TEST)
 # input preprocessing: 'data' is the name of the input blob == net.inputs[0]
 transformer = caffe.io.Transformer({'data': net.blobs['data'].data.shape})
@@ -54,7 +49,7 @@ accuracy = [0.0 for i in test_dataset]
 start_time = time.time()
 for index, (occlu_size, occlu_num) in enumerate(test_dataset):
     percent = str(int(100 * occlu_size))
-    test_file = open('{}dataset/test_crop_{}.txt'.format(imagenet_root, percent), 'r')
+    test_file = open('{}dataset/test_{}_{}.txt'.format(imagenet_root, test_crop_str, percent), 'r')
 
     lines = test_file.readlines()
     image_sum[index] = len(lines)
@@ -78,9 +73,9 @@ for index, (occlu_size, occlu_num) in enumerate(test_dataset):
     print 'image_sum: ', image_sum
     print 'accuracy: ', accuracy
     
-with open(result_root + 'test/positive_true_{}.pickle'.format(net_name), 'wb') as f:
+with open(result_root + 'test/positive_true_{}_{}_{}.pickle'.format(model_crop_str, test_crop_str, net_name), 'wb') as f:
     cPickle.dump(positive_true, f)
-with open(result_root + 'test/image_sum_{}.pickle'.format(net_name), 'wb') as f:
+with open(result_root + 'test/image_sum_{}_{}_{}.pickle'.format(model_crop_str, test_crop_str,net_name), 'wb') as f:
     cPickle.dump(image_sum, f)
-with open(result_root + 'test/accuracy_{}.pickle'.format(net_name), 'wb') as f:
+with open(result_root + 'test/accuracy_{}_{}_{}.pickle'.format(model_crop_str, test_crop_str,net_name), 'wb') as f:
     cPickle.dump(accuracy, f)
