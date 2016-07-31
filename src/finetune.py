@@ -11,11 +11,11 @@ import argparse
 parser = argparse.ArgumentParser()
 parser.add_argument('--gpu', default=0, required=False)
 parser.add_argument('--net_name', required=True)
-parser.add_argument('--crop_str', required=True) # crop / nocrop
+parser.add_argument('--type_str', required=True) # crop / nocrop / aperture
 args = parser.parse_args()
 gpu = int(args.gpu)
 net_name = args.net_name
-crop_str = args.crop_str
+type_str = args.type_str
 
 import caffe
 
@@ -30,9 +30,9 @@ test_accuracy = {}
 caffe.set_device(gpu)
 caffe.set_mode_gpu()
 
-print 'Processing: finetune_alexnet_{}_{}'.format(crop_str, net_name), 'on GPU', gpu, ',', crop_str
+print 'Processing: finetune_alexnet_{}_{}'.format(type_str, net_name), 'on GPU', gpu, ',', type_str
 
-solver = caffe.SGDSolver(result_root + 'model/finetune_alexnet_{}_{}/solver.prototxt'.format(crop_str, net_name))
+solver = caffe.SGDSolver(result_root + 'model/finetune_alexnet_{}_{}/solver.prototxt'.format(type_str, net_name))
 solver.net.copy_from(imagenet_root + 'model/bvlc_alexnet/bvlc_alexnet.caffemodel')
 
 start_time = time.time()
@@ -57,13 +57,13 @@ for it in range(niter):
     elif it % 10 == 0:
         print '[{} / {}] iter{:6} | train_loss={:10.6f}, train_accuracy={:10.6f}'.format(now_time, estimated_time, it, float(train_loss[it]), float(train_accuracy[it]))
         
-solver.net.save(result_root + 'model/finetune_alexnet_{}_{}/finetune_alexnet_{}_{}.caffemodel'.format(crop_str, net_name, crop_str, net_name))
+solver.net.save(result_root + 'model/finetune_alexnet_{}_{}/finetune_alexnet_{}_{}.caffemodel'.format(type_str, net_name, type_str, net_name))
 
-with open(result_root + 'finetune/train_loss_{}_{}.pickle'.format(crop_str, net_name), 'wb') as f:
+with open(result_root + 'finetune/train_loss_{}_{}.pickle'.format(type_str, net_name), 'wb') as f:
     cPickle.dump(train_loss, f)
-with open(result_root + 'finetune/train_accuracy_{}_{}.pickle'.format(crop_str, net_name), 'wb') as f:
+with open(result_root + 'finetune/train_accuracy_{}_{}.pickle'.format(type_str, net_name), 'wb') as f:
     cPickle.dump(train_accuracy, f)
-with open(result_root + 'finetune/test_accuracy_{}_{}.pickle'.format(crop_str, net_name), 'wb') as f:
+with open(result_root + 'finetune/test_accuracy_{}_{}.pickle'.format(type_str, net_name), 'wb') as f:
     cPickle.dump(test_accuracy, f)
 
 print 'done'

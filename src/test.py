@@ -8,6 +8,7 @@ import time
 import cPickle
 import argparse
 
+#### Parameters ####
 parser = argparse.ArgumentParser()
 parser.add_argument('--gpu', default=0, required=False)
 parser.add_argument('--net_name', required=True)
@@ -16,6 +17,8 @@ parser.add_argument('--test_crop_str', required=True)
 args = parser.parse_args()
 model_crop_str = args.model_crop_str
 test_crop_str = args.test_crop_str
+test_dataset = [(0.0, 0), (1.0/4, 4), (1.0/3, 3), (1.0/2, 3), (2.0/3, 3), (4.0/5, 3), (9.0/10, 3), (1.0, 1)]
+####################
 
 import caffe
 
@@ -41,7 +44,6 @@ transformer.set_channel_swap('data', (2,1,0))  # the reference model has channel
 # set net to batch size of 50
 net.blobs['data'].reshape(50,3,227,227)
 
-test_dataset = [(0.0, 0), (1.0/4, 4), (1.0/3, 3), (1.0/2, 3), (2.0/3, 3), (4.0/5, 3), (1.0, 1)]
 positive_true = [0 for i in test_dataset]
 image_sum = [0 for i in test_dataset]
 accuracy = [0.0 for i in test_dataset]
