@@ -1,0 +1,4 @@
+#PBS -S /bin/bash
+#PBS -l walltime=24:00:00
+
+python ~/occlusion-project/src/visualize_aperture.py

@@ -1,6 +1,7 @@
-imagenet_root = '/home/haow3/occlusion-project/data/imagenet/'
+imagenet_root = '/data2/haow3/data/imagenet/'
+shapenet_root = '/data2/haow3/data/shapenet/'
+result_root = '/data2/haow3/result/'
 caffe_root = '/home/haow3/software/caffe-rc3/'
-result_root = '/home/haow3/occlusion-project/result/'
 
 new_to_original_class_id = [99, 113, 132, 144, 321, 344, 386, 494, 497, 512, 525, 526, \
 650, 656, 737, 763, 844, 848, 903, 945]
