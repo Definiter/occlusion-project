@@ -1,0 +1,132 @@
+Processing: finetune_alexnet_crop_obj_100 on GPU 1, test on crop_obj
+[00:00:00]     0/ 2352: /home/haow3/occlusion-project/data/imagenet/dataset/test_crop_obj_0/n01855672_13294_crop_obj_0_0_0.jpeg 0 0
+[00:01:19]  1000/ 2352: /home/haow3/occlusion-project/data/imagenet/dataset/test_crop_obj_0/n03179701_13431_crop_obj_0_0_0.jpeg 11 11
+[00:02:56]  2000/ 2352: /home/haow3/occlusion-project/data/imagenet/dataset/test_crop_obj_0/n02504458_10829_crop_obj_1_0_0.jpeg 6 6
+positive_true:  [2129, 0, 0, 0, 0, 0]
+image_sum:  [2352, 0, 0, 0, 0, 0]
+accuracy:  [0.905187074829932, 0.0, 0.0, 0.0, 0.0, 0.0]
+[00:03:29]     0/21168: /home/haow3/occlusion-project/data/imagenet/dataset/test_crop_obj_20/n01855672_13294_crop_obj_0_20_0.jpeg 0 0
+[00:05:03]  1000/21168: /home/haow3/occlusion-project/data/imagenet/dataset/test_crop_obj_20/n01855672_12335_crop_obj_1_20_1.jpeg 0 0
+[00:06:38]  2000/21168: /home/haow3/occlusion-project/data/imagenet/dataset/test_crop_obj_20/n02009912_11117_crop_obj_0_20_2.jpeg 2 2
+[00:08:14]  3000/21168: /home/haow3/occlusion-project/data/imagenet/dataset/test_crop_obj_20/n02051845_8470_crop_obj_0_20_3.jpeg 3 3
+[00:09:56]  4000/21168: /home/haow3/occlusion-project/data/imagenet/dataset/test_crop_obj_20/n02398521_7628_crop_obj_0_20_4.jpeg 5 5
+[00:11:37]  5000/21168: /home/haow3/occlusion-project/data/imagenet/dataset/test_crop_obj_20/n03017168_14571_crop_obj_0_20_5.jpeg 7 7
+[00:13:16]  6000/21168: /home/haow3/occlusion-project/data/imagenet/dataset/test_crop_obj_20/n03028079_15726_crop_obj_0_20_6.jpeg 8 8
+[00:14:53]  7000/21168: /home/haow3/occlusion-project/data/imagenet/dataset/test_crop_obj_20/n03109150_13873_crop_obj_0_20_7.jpeg 9 9
+[00:16:30]  8000/21168: /home/haow3/occlusion-project/data/imagenet/dataset/test_crop_obj_20/n03160309_39193_crop_obj_1_20_8.jpeg 10 10
+[00:18:12]  9000/21168: /home/haow3/occlusion-project/data/imagenet/dataset/test_crop_obj_20/n03179701_13431_crop_obj_0_20_0.jpeg 11 11
+[00:19:48] 10000/21168: /home/haow3/occlusion-project/data/imagenet/dataset/test_crop_obj_20/n03759954_19215_crop_obj_0_20_1.jpeg 12 12
+[00:21:22] 11000/21168: /home/haow3/occlusion-project/data/imagenet/dataset/test_crop_obj_20/n03770679_13401_crop_obj_0_20_2.jpeg 13 13
+[00:22:54] 12000/21168: /home/haow3/occlusion-project/data/imagenet/dataset/test_crop_obj_20/n03983396_3273_crop_obj_1_20_3.jpeg 19 14
+[00:24:34] 13000/21168: /home/haow3/occlusion-project/data/imagenet/dataset/test_crop_obj_20/n04086273_17921_crop_obj_0_20_4.jpeg 15 15
+[00:26:14] 14000/21168: /home/haow3/occlusion-project/data/imagenet/dataset/test_crop_obj_20/n04372370_22289_crop_obj_1_20_5.jpeg 16 16
+[00:27:47] 15000/21168: /home/haow3/occlusion-project/data/imagenet/dataset/test_crop_obj_20/n04392985_8027_crop_obj_0_20_6.jpeg 17 17
+[00:29:22] 16000/21168: /home/haow3/occlusion-project/data/imagenet/dataset/test_crop_obj_20/n04584207_7906_crop_obj_0_20_7.jpeg 18 18
+[00:30:56] 17000/21168: /home/haow3/occlusion-project/data/imagenet/dataset/test_crop_obj_20/n07720875_4414_crop_obj_1_20_8.jpeg 19 19
+[00:32:29] 18000/21168: /home/haow3/occlusion-project/data/imagenet/dataset/test_crop_obj_20/n02504458_10829_crop_obj_1_20_0.jpeg 6 6
+[00:33:59] 19000/21168: /home/haow3/occlusion-project/data/imagenet/dataset/test_crop_obj_20/n02504458_4107_crop_obj_0_20_1.jpeg 6 6
+[00:35:28] 20000/21168: /home/haow3/occlusion-project/data/imagenet/dataset/test_crop_obj_20/n02276258_5395_crop_obj_0_20_2.jpeg 4 4
+[00:36:56] 21000/21168: /home/haow3/occlusion-project/data/imagenet/dataset/test_crop_obj_20/n01944390_10992_crop_obj_0_20_3.jpeg 1 1
+positive_true:  [2129, 19103, 0, 0, 0, 0]
+image_sum:  [2352, 21168, 0, 0, 0, 0]
+accuracy:  [0.905187074829932, 0.90244708994709, 0.0, 0.0, 0.0, 0.0]
+[00:37:11]     0/21168: /home/haow3/occlusion-project/data/imagenet/dataset/test_crop_obj_40/n01855672_13294_crop_obj_0_40_0.jpeg 0 0
+[00:38:43]  1000/21168: /home/haow3/occlusion-project/data/imagenet/dataset/test_crop_obj_40/n01855672_12335_crop_obj_1_40_1.jpeg 0 0
+[00:40:14]  2000/21168: /home/haow3/occlusion-project/data/imagenet/dataset/test_crop_obj_40/n02009912_11117_crop_obj_0_40_2.jpeg 2 2
+[00:41:44]  3000/21168: /home/haow3/occlusion-project/data/imagenet/dataset/test_crop_obj_40/n02051845_8470_crop_obj_0_40_3.jpeg 3 3
+[00:43:11]  4000/21168: /home/haow3/occlusion-project/data/imagenet/dataset/test_crop_obj_40/n02398521_7628_crop_obj_0_40_4.jpeg 5 5
+[00:44:40]  5000/21168: /home/haow3/occlusion-project/data/imagenet/dataset/test_crop_obj_40/n03017168_14571_crop_obj_0_40_5.jpeg 7 7
+[00:46:12]  6000/21168: /home/haow3/occlusion-project/data/imagenet/dataset/test_crop_obj_40/n03028079_15726_crop_obj_0_40_6.jpeg 8 8
+[00:47:42]  7000/21168: /home/haow3/occlusion-project/data/imagenet/dataset/test_crop_obj_40/n03109150_13873_crop_obj_0_40_7.jpeg 9 9
+[00:49:15]  8000/21168: /home/haow3/occlusion-project/data/imagenet/dataset/test_crop_obj_40/n03160309_39193_crop_obj_1_40_8.jpeg 10 10
+[00:51:01]  9000/21168: /home/haow3/occlusion-project/data/imagenet/dataset/test_crop_obj_40/n03179701_13431_crop_obj_0_40_0.jpeg 11 11
+[00:52:39] 10000/21168: /home/haow3/occlusion-project/data/imagenet/dataset/test_crop_obj_40/n03759954_19215_crop_obj_0_40_1.jpeg 7 12
+[00:54:09] 11000/21168: /home/haow3/occlusion-project/data/imagenet/dataset/test_crop_obj_40/n03770679_13401_crop_obj_0_40_2.jpeg 13 13
+[00:55:51] 12000/21168: /home/haow3/occlusion-project/data/imagenet/dataset/test_crop_obj_40/n03983396_3273_crop_obj_1_40_3.jpeg 19 14
+[00:57:40] 13000/21168: /home/haow3/occlusion-project/data/imagenet/dataset/test_crop_obj_40/n04086273_17921_crop_obj_0_40_4.jpeg 15 15
+[00:59:24] 14000/21168: /home/haow3/occlusion-project/data/imagenet/dataset/test_crop_obj_40/n04372370_22289_crop_obj_1_40_5.jpeg 16 16
+[01:01:07] 15000/21168: /home/haow3/occlusion-project/data/imagenet/dataset/test_crop_obj_40/n04392985_8027_crop_obj_0_40_6.jpeg 17 17
+[01:02:54] 16000/21168: /home/haow3/occlusion-project/data/imagenet/dataset/test_crop_obj_40/n04584207_7906_crop_obj_0_40_7.jpeg 18 18
+[01:04:35] 17000/21168: /home/haow3/occlusion-project/data/imagenet/dataset/test_crop_obj_40/n07720875_4414_crop_obj_1_40_8.jpeg 19 19
+[01:06:17] 18000/21168: /home/haow3/occlusion-project/data/imagenet/dataset/test_crop_obj_40/n02504458_10829_crop_obj_1_40_0.jpeg 6 6
+[01:07:58] 19000/21168: /home/haow3/occlusion-project/data/imagenet/dataset/test_crop_obj_40/n02504458_4107_crop_obj_0_40_1.jpeg 6 6
+[01:09:45] 20000/21168: /home/haow3/occlusion-project/data/imagenet/dataset/test_crop_obj_40/n02276258_5395_crop_obj_0_40_2.jpeg 4 4
+[01:11:22] 21000/21168: /home/haow3/occlusion-project/data/imagenet/dataset/test_crop_obj_40/n01944390_10992_crop_obj_0_40_3.jpeg 1 1
+positive_true:  [2129, 19103, 18962, 0, 0, 0]
+image_sum:  [2352, 21168, 21168, 0, 0, 0]
+accuracy:  [0.905187074829932, 0.90244708994709, 0.8957860922146637, 0.0, 0.0, 0.0]
+[01:11:38]     0/21168: /home/haow3/occlusion-project/data/imagenet/dataset/test_crop_obj_60/n01855672_13294_crop_obj_0_60_0.jpeg 0 0
+[01:13:15]  1000/21168: /home/haow3/occlusion-project/data/imagenet/dataset/test_crop_obj_60/n01855672_12335_crop_obj_1_60_1.jpeg 0 0
+[01:14:51]  2000/21168: /home/haow3/occlusion-project/data/imagenet/dataset/test_crop_obj_60/n02009912_11117_crop_obj_0_60_2.jpeg 2 2
+[01:16:30]  3000/21168: /home/haow3/occlusion-project/data/imagenet/dataset/test_crop_obj_60/n02051845_8470_crop_obj_0_60_3.jpeg 3 3
+[01:18:05]  4000/21168: /home/haow3/occlusion-project/data/imagenet/dataset/test_crop_obj_60/n02398521_7628_crop_obj_0_60_4.jpeg 5 5
+[01:19:46]  5000/21168: /home/haow3/occlusion-project/data/imagenet/dataset/test_crop_obj_60/n03017168_14571_crop_obj_0_60_5.jpeg 7 7
+[01:21:28]  6000/21168: /home/haow3/occlusion-project/data/imagenet/dataset/test_crop_obj_60/n03028079_15726_crop_obj_0_60_6.jpeg 8 8
+[01:23:07]  7000/21168: /home/haow3/occlusion-project/data/imagenet/dataset/test_crop_obj_60/n03109150_13873_crop_obj_0_60_7.jpeg 9 9
+[01:24:47]  8000/21168: /home/haow3/occlusion-project/data/imagenet/dataset/test_crop_obj_60/n03160309_39193_crop_obj_1_60_8.jpeg 10 10
+[01:26:32]  9000/21168: /home/haow3/occlusion-project/data/imagenet/dataset/test_crop_obj_60/n03179701_13431_crop_obj_0_60_0.jpeg 11 11
+[01:28:10] 10000/21168: /home/haow3/occlusion-project/data/imagenet/dataset/test_crop_obj_60/n03759954_19215_crop_obj_0_60_1.jpeg 12 12
+[01:29:48] 11000/21168: /home/haow3/occlusion-project/data/imagenet/dataset/test_crop_obj_60/n03770679_13401_crop_obj_0_60_2.jpeg 13 13
+[01:31:28] 12000/21168: /home/haow3/occlusion-project/data/imagenet/dataset/test_crop_obj_60/n03983396_3273_crop_obj_1_60_3.jpeg 19 14
+[01:33:03] 13000/21168: /home/haow3/occlusion-project/data/imagenet/dataset/test_crop_obj_60/n04086273_17921_crop_obj_0_60_4.jpeg 15 15
+[01:34:44] 14000/21168: /home/haow3/occlusion-project/data/imagenet/dataset/test_crop_obj_60/n04372370_22289_crop_obj_1_60_5.jpeg 16 16
+[01:36:21] 15000/21168: /home/haow3/occlusion-project/data/imagenet/dataset/test_crop_obj_60/n04392985_8027_crop_obj_0_60_6.jpeg 17 17
+[01:38:06] 16000/21168: /home/haow3/occlusion-project/data/imagenet/dataset/test_crop_obj_60/n04584207_7906_crop_obj_0_60_7.jpeg 18 18
+[01:39:43] 17000/21168: /home/haow3/occlusion-project/data/imagenet/dataset/test_crop_obj_60/n07720875_4414_crop_obj_1_60_8.jpeg 19 19
+[01:41:17] 18000/21168: /home/haow3/occlusion-project/data/imagenet/dataset/test_crop_obj_60/n02504458_10829_crop_obj_1_60_0.jpeg 6 6
+[01:42:54] 19000/21168: /home/haow3/occlusion-project/data/imagenet/dataset/test_crop_obj_60/n02504458_4107_crop_obj_0_60_1.jpeg 6 6
+[01:44:35] 20000/21168: /home/haow3/occlusion-project/data/imagenet/dataset/test_crop_obj_60/n02276258_5395_crop_obj_0_60_2.jpeg 4 4
+[01:46:07] 21000/21168: /home/haow3/occlusion-project/data/imagenet/dataset/test_crop_obj_60/n01944390_10992_crop_obj_0_60_3.jpeg 1 1
+positive_true:  [2129, 19103, 18962, 18751, 0, 0]
+image_sum:  [2352, 21168, 21168, 21168, 0, 0]
+accuracy:  [0.905187074829932, 0.90244708994709, 0.8957860922146637, 0.885818216175359, 0.0, 0.0]
+[01:46:24]     0/21168: /home/haow3/occlusion-project/data/imagenet/dataset/test_crop_obj_80/n01855672_13294_crop_obj_0_80_0.jpeg 0 0
+[01:47:59]  1000/21168: /home/haow3/occlusion-project/data/imagenet/dataset/test_crop_obj_80/n01855672_12335_crop_obj_1_80_1.jpeg 0 0
+[01:49:33]  2000/21168: /home/haow3/occlusion-project/data/imagenet/dataset/test_crop_obj_80/n02009912_11117_crop_obj_0_80_2.jpeg 2 2
+[01:51:09]  3000/21168: /home/haow3/occlusion-project/data/imagenet/dataset/test_crop_obj_80/n02051845_8470_crop_obj_0_80_3.jpeg 3 3
+[01:52:43]  4000/21168: /home/haow3/occlusion-project/data/imagenet/dataset/test_crop_obj_80/n02398521_7628_crop_obj_0_80_4.jpeg 5 5
+[01:54:23]  5000/21168: /home/haow3/occlusion-project/data/imagenet/dataset/test_crop_obj_80/n03017168_14571_crop_obj_0_80_5.jpeg 7 7
+[01:56:02]  6000/21168: /home/haow3/occlusion-project/data/imagenet/dataset/test_crop_obj_80/n03028079_15726_crop_obj_0_80_6.jpeg 8 8
+[01:57:43]  7000/21168: /home/haow3/occlusion-project/data/imagenet/dataset/test_crop_obj_80/n03109150_13873_crop_obj_0_80_7.jpeg 9 9
+[01:59:24]  8000/21168: /home/haow3/occlusion-project/data/imagenet/dataset/test_crop_obj_80/n03160309_39193_crop_obj_1_80_8.jpeg 10 10
+[02:01:10]  9000/21168: /home/haow3/occlusion-project/data/imagenet/dataset/test_crop_obj_80/n03179701_13431_crop_obj_0_80_0.jpeg 11 11
+[02:02:49] 10000/21168: /home/haow3/occlusion-project/data/imagenet/dataset/test_crop_obj_80/n03759954_19215_crop_obj_0_80_1.jpeg 12 12
+[02:04:25] 11000/21168: /home/haow3/occlusion-project/data/imagenet/dataset/test_crop_obj_80/n03770679_13401_crop_obj_0_80_2.jpeg 13 13
+[02:06:08] 12000/21168: /home/haow3/occlusion-project/data/imagenet/dataset/test_crop_obj_80/n03983396_3273_crop_obj_1_80_3.jpeg 19 14
+[02:07:47] 13000/21168: /home/haow3/occlusion-project/data/imagenet/dataset/test_crop_obj_80/n04086273_17921_crop_obj_0_80_4.jpeg 15 15
+[02:09:30] 14000/21168: /home/haow3/occlusion-project/data/imagenet/dataset/test_crop_obj_80/n04372370_22289_crop_obj_1_80_5.jpeg 15 16
+[02:11:12] 15000/21168: /home/haow3/occlusion-project/data/imagenet/dataset/test_crop_obj_80/n04392985_8027_crop_obj_0_80_6.jpeg 17 17
+[02:12:58] 16000/21168: /home/haow3/occlusion-project/data/imagenet/dataset/test_crop_obj_80/n04584207_7906_crop_obj_0_80_7.jpeg 18 18
+[02:14:40] 17000/21168: /home/haow3/occlusion-project/data/imagenet/dataset/test_crop_obj_80/n07720875_4414_crop_obj_1_80_8.jpeg 19 19
+[02:16:22] 18000/21168: /home/haow3/occlusion-project/data/imagenet/dataset/test_crop_obj_80/n02504458_10829_crop_obj_1_80_0.jpeg 6 6
+[02:18:03] 19000/21168: /home/haow3/occlusion-project/data/imagenet/dataset/test_crop_obj_80/n02504458_4107_crop_obj_0_80_1.jpeg 6 6
+[02:19:49] 20000/21168: /home/haow3/occlusion-project/data/imagenet/dataset/test_crop_obj_80/n02276258_5395_crop_obj_0_80_2.jpeg 4 4
+[02:21:28] 21000/21168: /home/haow3/occlusion-project/data/imagenet/dataset/test_crop_obj_80/n01944390_10992_crop_obj_0_80_3.jpeg 1 1
+positive_true:  [2129, 19103, 18962, 18751, 18280, 0]
+image_sum:  [2352, 21168, 21168, 21168, 21168, 0]
+accuracy:  [0.905187074829932, 0.90244708994709, 0.8957860922146637, 0.885818216175359, 0.863567649281935, 0.0]
+[02:21:45]     0/21168: /home/haow3/occlusion-project/data/imagenet/dataset/test_crop_obj_100/n01855672_13294_crop_obj_0_100_0.jpeg 0 0
+[02:23:22]  1000/21168: /home/haow3/occlusion-project/data/imagenet/dataset/test_crop_obj_100/n01855672_12335_crop_obj_1_100_1.jpeg 0 0
+[02:24:58]  2000/21168: /home/haow3/occlusion-project/data/imagenet/dataset/test_crop_obj_100/n02009912_11117_crop_obj_0_100_2.jpeg 2 2
+[02:26:40]  3000/21168: /home/haow3/occlusion-project/data/imagenet/dataset/test_crop_obj_100/n02051845_8470_crop_obj_0_100_3.jpeg 3 3
+[02:28:17]  4000/21168: /home/haow3/occlusion-project/data/imagenet/dataset/test_crop_obj_100/n02398521_7628_crop_obj_0_100_4.jpeg 6 5
+[02:30:00]  5000/21168: /home/haow3/occlusion-project/data/imagenet/dataset/test_crop_obj_100/n03017168_14571_crop_obj_0_100_5.jpeg 7 7
+[02:31:41]  6000/21168: /home/haow3/occlusion-project/data/imagenet/dataset/test_crop_obj_100/n03028079_15726_crop_obj_0_100_6.jpeg 8 8
+[02:33:29]  7000/21168: /home/haow3/occlusion-project/data/imagenet/dataset/test_crop_obj_100/n03109150_13873_crop_obj_0_100_7.jpeg 9 9
+[02:35:11]  8000/21168: /home/haow3/occlusion-project/data/imagenet/dataset/test_crop_obj_100/n03160309_39193_crop_obj_1_100_8.jpeg 10 10
+[02:36:57]  9000/21168: /home/haow3/occlusion-project/data/imagenet/dataset/test_crop_obj_100/n03179701_13431_crop_obj_0_100_0.jpeg 11 11
+[02:38:37] 10000/21168: /home/haow3/occlusion-project/data/imagenet/dataset/test_crop_obj_100/n03759954_19215_crop_obj_0_100_1.jpeg 7 12
+[02:40:15] 11000/21168: /home/haow3/occlusion-project/data/imagenet/dataset/test_crop_obj_100/n03770679_13401_crop_obj_0_100_2.jpeg 13 13
+[02:41:57] 12000/21168: /home/haow3/occlusion-project/data/imagenet/dataset/test_crop_obj_100/n03983396_3273_crop_obj_1_100_3.jpeg 19 14
+[02:43:24] 13000/21168: /home/haow3/occlusion-project/data/imagenet/dataset/test_crop_obj_100/n04086273_17921_crop_obj_0_100_4.jpeg 15 15
+[02:44:56] 14000/21168: /home/haow3/occlusion-project/data/imagenet/dataset/test_crop_obj_100/n04372370_22289_crop_obj_1_100_5.jpeg 16 16
+[02:46:26] 15000/21168: /home/haow3/occlusion-project/data/imagenet/dataset/test_crop_obj_100/n04392985_8027_crop_obj_0_100_6.jpeg 17 17
+[02:47:59] 16000/21168: /home/haow3/occlusion-project/data/imagenet/dataset/test_crop_obj_100/n04584207_7906_crop_obj_0_100_7.jpeg 18 18
+[02:49:33] 17000/21168: /home/haow3/occlusion-project/data/imagenet/dataset/test_crop_obj_100/n07720875_4414_crop_obj_1_100_8.jpeg 19 19
+[02:51:05] 18000/21168: /home/haow3/occlusion-project/data/imagenet/dataset/test_crop_obj_100/n02504458_10829_crop_obj_1_100_0.jpeg 6 6
+[02:52:33] 19000/21168: /home/haow3/occlusion-project/data/imagenet/dataset/test_crop_obj_100/n02504458_4107_crop_obj_0_100_1.jpeg 6 6
+[02:54:06] 20000/21168: /home/haow3/occlusion-project/data/imagenet/dataset/test_crop_obj_100/n02276258_5395_crop_obj_0_100_2.jpeg 4 4
+[02:55:35] 21000/21168: /home/haow3/occlusion-project/data/imagenet/dataset/test_crop_obj_100/n01944390_10992_crop_obj_0_100_3.jpeg 1 1
+positive_true:  [2129, 19103, 18962, 18751, 18280, 17550]
+image_sum:  [2352, 21168, 21168, 21168, 21168, 21168]
+accuracy:  [0.905187074829932, 0.90244708994709, 0.8957860922146637, 0.885818216175359, 0.863567649281935, 0.8290816326530612]

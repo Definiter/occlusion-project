@@ -1,0 +1,111 @@
+Processing: finetune_alexnet_crop_obj_20 on GPU 1, test on nocrop_obj
+[00:00:00]     0/ 2000: /home/haow3/occlusion-project/data/imagenet/dataset/test_nocrop_obj_0/n01855672_13294_nocrop_obj_0_0_0.jpeg 0 0
+[00:02:01]  1000/ 2000: /home/haow3/occlusion-project/data/imagenet/dataset/test_nocrop_obj_0/n03770679_10215_nocrop_obj_0_0_0.jpeg 8 13
+positive_true:  [1767, 0, 0, 0, 0, 0]
+image_sum:  [2000, 0, 0, 0, 0, 0]
+accuracy:  [0.8835, 0.0, 0.0, 0.0, 0.0, 0.0]
+[00:03:54]     0/18000: /home/haow3/occlusion-project/data/imagenet/dataset/test_nocrop_obj_20/n01855672_13294_nocrop_obj_0_20_0.jpeg 0 0
+[00:05:48]  1000/18000: /home/haow3/occlusion-project/data/imagenet/dataset/test_nocrop_obj_20/n02009912_2454_nocrop_obj_0_20_1.jpeg 2 2
+[00:07:43]  2000/18000: /home/haow3/occlusion-project/data/imagenet/dataset/test_nocrop_obj_20/n02051845_6970_nocrop_obj_0_20_2.jpeg 2 3
+[00:09:43]  3000/18000: /home/haow3/occlusion-project/data/imagenet/dataset/test_nocrop_obj_20/n02398521_10300_nocrop_obj_0_20_3.jpeg 5 5
+[00:11:56]  4000/18000: /home/haow3/occlusion-project/data/imagenet/dataset/test_nocrop_obj_20/n03017168_28746_nocrop_obj_1_20_4.jpeg 10 7
+[00:13:57]  5000/18000: /home/haow3/occlusion-project/data/imagenet/dataset/test_nocrop_obj_20/n03028079_17345_nocrop_obj_0_20_5.jpeg 8 8
+[00:15:58]  6000/18000: /home/haow3/occlusion-project/data/imagenet/dataset/test_nocrop_obj_20/n03109150_4916_nocrop_obj_0_20_6.jpeg 9 9
+[00:17:39]  7000/18000: /home/haow3/occlusion-project/data/imagenet/dataset/test_nocrop_obj_20/n03160309_37705_nocrop_obj_0_20_7.jpeg 10 10
+[00:19:42]  8000/18000: /home/haow3/occlusion-project/data/imagenet/dataset/test_nocrop_obj_20/n03179701_11766_nocrop_obj_0_20_8.jpeg 11 11
+[00:21:51]  9000/18000: /home/haow3/occlusion-project/data/imagenet/dataset/test_nocrop_obj_20/n03770679_10215_nocrop_obj_0_20_0.jpeg 8 13
+[00:24:07] 10000/18000: /home/haow3/occlusion-project/data/imagenet/dataset/test_nocrop_obj_20/n03983396_4829_nocrop_obj_0_20_1.jpeg 14 14
+[00:26:24] 11000/18000: /home/haow3/occlusion-project/data/imagenet/dataset/test_nocrop_obj_20/n04086273_2082_nocrop_obj_0_20_2.jpeg 15 15
+[00:28:34] 12000/18000: /home/haow3/occlusion-project/data/imagenet/dataset/test_nocrop_obj_20/n04372370_7834_nocrop_obj_0_20_3.jpeg 16 16
+[00:30:29] 13000/18000: /home/haow3/occlusion-project/data/imagenet/dataset/test_nocrop_obj_20/n04392985_3834_nocrop_obj_0_20_4.jpeg 17 17
+[00:32:13] 14000/18000: /home/haow3/occlusion-project/data/imagenet/dataset/test_nocrop_obj_20/n04584207_20760_nocrop_obj_0_20_5.jpeg 8 18
+[00:34:07] 15000/18000: /home/haow3/occlusion-project/data/imagenet/dataset/test_nocrop_obj_20/n07720875_258_nocrop_obj_2_20_6.jpeg 19 19
+[00:35:55] 16000/18000: /home/haow3/occlusion-project/data/imagenet/dataset/test_nocrop_obj_20/n02504458_3381_nocrop_obj_0_20_7.jpeg 6 6
+[00:38:00] 17000/18000: /home/haow3/occlusion-project/data/imagenet/dataset/test_nocrop_obj_20/n02276258_5149_nocrop_obj_0_20_8.jpeg 4 4
+positive_true:  [1767, 15852, 0, 0, 0, 0]
+image_sum:  [2000, 18000, 0, 0, 0, 0]
+accuracy:  [0.8835, 0.8806666666666667, 0.0, 0.0, 0.0, 0.0]
+[00:39:49]     0/18000: /home/haow3/occlusion-project/data/imagenet/dataset/test_nocrop_obj_40/n01855672_13294_nocrop_obj_0_40_0.jpeg 0 0
+[00:41:59]  1000/18000: /home/haow3/occlusion-project/data/imagenet/dataset/test_nocrop_obj_40/n02009912_2454_nocrop_obj_0_40_1.jpeg 2 2
+[00:43:59]  2000/18000: /home/haow3/occlusion-project/data/imagenet/dataset/test_nocrop_obj_40/n02051845_6970_nocrop_obj_0_40_2.jpeg 2 3
+[00:45:53]  3000/18000: /home/haow3/occlusion-project/data/imagenet/dataset/test_nocrop_obj_40/n02398521_10300_nocrop_obj_0_40_3.jpeg 5 5
+[00:47:52]  4000/18000: /home/haow3/occlusion-project/data/imagenet/dataset/test_nocrop_obj_40/n03017168_28746_nocrop_obj_1_40_4.jpeg 7 7
+[00:49:41]  5000/18000: /home/haow3/occlusion-project/data/imagenet/dataset/test_nocrop_obj_40/n03028079_17345_nocrop_obj_0_40_5.jpeg 8 8
+[00:51:33]  6000/18000: /home/haow3/occlusion-project/data/imagenet/dataset/test_nocrop_obj_40/n03109150_4916_nocrop_obj_0_40_6.jpeg 9 9
+[00:53:34]  7000/18000: /home/haow3/occlusion-project/data/imagenet/dataset/test_nocrop_obj_40/n03160309_37705_nocrop_obj_0_40_7.jpeg 10 10
+[00:55:37]  8000/18000: /home/haow3/occlusion-project/data/imagenet/dataset/test_nocrop_obj_40/n03179701_11766_nocrop_obj_0_40_8.jpeg 11 11
+[00:57:21]  9000/18000: /home/haow3/occlusion-project/data/imagenet/dataset/test_nocrop_obj_40/n03770679_10215_nocrop_obj_0_40_0.jpeg 8 13
+[00:59:33] 10000/18000: /home/haow3/occlusion-project/data/imagenet/dataset/test_nocrop_obj_40/n03983396_4829_nocrop_obj_0_40_1.jpeg 14 14
+[01:01:55] 11000/18000: /home/haow3/occlusion-project/data/imagenet/dataset/test_nocrop_obj_40/n04086273_2082_nocrop_obj_0_40_2.jpeg 15 15
+[01:04:06] 12000/18000: /home/haow3/occlusion-project/data/imagenet/dataset/test_nocrop_obj_40/n04372370_7834_nocrop_obj_0_40_3.jpeg 16 16
+[01:06:10] 13000/18000: /home/haow3/occlusion-project/data/imagenet/dataset/test_nocrop_obj_40/n04392985_3834_nocrop_obj_0_40_4.jpeg 17 17
+[01:08:13] 14000/18000: /home/haow3/occlusion-project/data/imagenet/dataset/test_nocrop_obj_40/n04584207_20760_nocrop_obj_0_40_5.jpeg 8 18
+[01:10:14] 15000/18000: /home/haow3/occlusion-project/data/imagenet/dataset/test_nocrop_obj_40/n07720875_258_nocrop_obj_2_40_6.jpeg 19 19
+[01:12:18] 16000/18000: /home/haow3/occlusion-project/data/imagenet/dataset/test_nocrop_obj_40/n02504458_3381_nocrop_obj_0_40_7.jpeg 6 6
+[01:14:15] 17000/18000: /home/haow3/occlusion-project/data/imagenet/dataset/test_nocrop_obj_40/n02276258_5149_nocrop_obj_0_40_8.jpeg 4 4
+positive_true:  [1767, 15852, 15638, 0, 0, 0]
+image_sum:  [2000, 18000, 18000, 0, 0, 0]
+accuracy:  [0.8835, 0.8806666666666667, 0.8687777777777778, 0.0, 0.0, 0.0]
+[01:16:11]     0/18000: /home/haow3/occlusion-project/data/imagenet/dataset/test_nocrop_obj_60/n01855672_13294_nocrop_obj_0_60_0.jpeg 0 0
+[01:18:16]  1000/18000: /home/haow3/occlusion-project/data/imagenet/dataset/test_nocrop_obj_60/n02009912_2454_nocrop_obj_0_60_1.jpeg 2 2
+[01:20:47]  2000/18000: /home/haow3/occlusion-project/data/imagenet/dataset/test_nocrop_obj_60/n02051845_6970_nocrop_obj_0_60_2.jpeg 14 3
+[01:22:55]  3000/18000: /home/haow3/occlusion-project/data/imagenet/dataset/test_nocrop_obj_60/n02398521_10300_nocrop_obj_0_60_3.jpeg 5 5
+[01:24:49]  4000/18000: /home/haow3/occlusion-project/data/imagenet/dataset/test_nocrop_obj_60/n03017168_28746_nocrop_obj_1_60_4.jpeg 7 7
+[01:26:48]  5000/18000: /home/haow3/occlusion-project/data/imagenet/dataset/test_nocrop_obj_60/n03028079_17345_nocrop_obj_0_60_5.jpeg 8 8
+[01:28:45]  6000/18000: /home/haow3/occlusion-project/data/imagenet/dataset/test_nocrop_obj_60/n03109150_4916_nocrop_obj_0_60_6.jpeg 9 9
+[01:30:57]  7000/18000: /home/haow3/occlusion-project/data/imagenet/dataset/test_nocrop_obj_60/n03160309_37705_nocrop_obj_0_60_7.jpeg 10 10
+[01:33:03]  8000/18000: /home/haow3/occlusion-project/data/imagenet/dataset/test_nocrop_obj_60/n03179701_11766_nocrop_obj_0_60_8.jpeg 11 11
+[01:35:21]  9000/18000: /home/haow3/occlusion-project/data/imagenet/dataset/test_nocrop_obj_60/n03770679_10215_nocrop_obj_0_60_0.jpeg 8 13
+[01:37:24] 10000/18000: /home/haow3/occlusion-project/data/imagenet/dataset/test_nocrop_obj_60/n03983396_4829_nocrop_obj_0_60_1.jpeg 14 14
+[01:39:38] 11000/18000: /home/haow3/occlusion-project/data/imagenet/dataset/test_nocrop_obj_60/n04086273_2082_nocrop_obj_0_60_2.jpeg 15 15
+[01:41:44] 12000/18000: /home/haow3/occlusion-project/data/imagenet/dataset/test_nocrop_obj_60/n04372370_7834_nocrop_obj_0_60_3.jpeg 16 16
+[01:43:47] 13000/18000: /home/haow3/occlusion-project/data/imagenet/dataset/test_nocrop_obj_60/n04392985_3834_nocrop_obj_0_60_4.jpeg 17 17
+[01:46:02] 14000/18000: /home/haow3/occlusion-project/data/imagenet/dataset/test_nocrop_obj_60/n04584207_20760_nocrop_obj_0_60_5.jpeg 8 18
+[01:48:12] 15000/18000: /home/haow3/occlusion-project/data/imagenet/dataset/test_nocrop_obj_60/n07720875_258_nocrop_obj_2_60_6.jpeg 19 19
+[01:50:19] 16000/18000: /home/haow3/occlusion-project/data/imagenet/dataset/test_nocrop_obj_60/n02504458_3381_nocrop_obj_0_60_7.jpeg 6 6
+[01:52:50] 17000/18000: /home/haow3/occlusion-project/data/imagenet/dataset/test_nocrop_obj_60/n02276258_5149_nocrop_obj_0_60_8.jpeg 4 4
+positive_true:  [1767, 15852, 15638, 15228, 0, 0]
+image_sum:  [2000, 18000, 18000, 18000, 0, 0]
+accuracy:  [0.8835, 0.8806666666666667, 0.8687777777777778, 0.846, 0.0, 0.0]
+[01:54:51]     0/18000: /home/haow3/occlusion-project/data/imagenet/dataset/test_nocrop_obj_80/n01855672_13294_nocrop_obj_0_80_0.jpeg 0 0
+[01:57:17]  1000/18000: /home/haow3/occlusion-project/data/imagenet/dataset/test_nocrop_obj_80/n02009912_2454_nocrop_obj_0_80_1.jpeg 2 2
+[01:59:28]  2000/18000: /home/haow3/occlusion-project/data/imagenet/dataset/test_nocrop_obj_80/n02051845_6970_nocrop_obj_0_80_2.jpeg 2 3
+[02:01:52]  3000/18000: /home/haow3/occlusion-project/data/imagenet/dataset/test_nocrop_obj_80/n02398521_10300_nocrop_obj_0_80_3.jpeg 5 5
+[02:03:52]  4000/18000: /home/haow3/occlusion-project/data/imagenet/dataset/test_nocrop_obj_80/n03017168_28746_nocrop_obj_1_80_4.jpeg 10 7
+[02:06:08]  5000/18000: /home/haow3/occlusion-project/data/imagenet/dataset/test_nocrop_obj_80/n03028079_17345_nocrop_obj_0_80_5.jpeg 8 8
+[02:08:10]  6000/18000: /home/haow3/occlusion-project/data/imagenet/dataset/test_nocrop_obj_80/n03109150_4916_nocrop_obj_0_80_6.jpeg 9 9
+[02:10:13]  7000/18000: /home/haow3/occlusion-project/data/imagenet/dataset/test_nocrop_obj_80/n03160309_37705_nocrop_obj_0_80_7.jpeg 10 10
+[02:12:16]  8000/18000: /home/haow3/occlusion-project/data/imagenet/dataset/test_nocrop_obj_80/n03179701_11766_nocrop_obj_0_80_8.jpeg 11 11
+[02:14:02]  9000/18000: /home/haow3/occlusion-project/data/imagenet/dataset/test_nocrop_obj_80/n03770679_10215_nocrop_obj_0_80_0.jpeg 8 13
+[02:16:04] 10000/18000: /home/haow3/occlusion-project/data/imagenet/dataset/test_nocrop_obj_80/n03983396_4829_nocrop_obj_0_80_1.jpeg 14 14
+[02:18:04] 11000/18000: /home/haow3/occlusion-project/data/imagenet/dataset/test_nocrop_obj_80/n04086273_2082_nocrop_obj_0_80_2.jpeg 15 15
+[02:20:01] 12000/18000: /home/haow3/occlusion-project/data/imagenet/dataset/test_nocrop_obj_80/n04372370_7834_nocrop_obj_0_80_3.jpeg 16 16
+[02:22:09] 13000/18000: /home/haow3/occlusion-project/data/imagenet/dataset/test_nocrop_obj_80/n04392985_3834_nocrop_obj_0_80_4.jpeg 17 17
+[02:24:25] 14000/18000: /home/haow3/occlusion-project/data/imagenet/dataset/test_nocrop_obj_80/n04584207_20760_nocrop_obj_0_80_5.jpeg 8 18
+[02:26:40] 15000/18000: /home/haow3/occlusion-project/data/imagenet/dataset/test_nocrop_obj_80/n07720875_258_nocrop_obj_2_80_6.jpeg 19 19
+[02:28:51] 16000/18000: /home/haow3/occlusion-project/data/imagenet/dataset/test_nocrop_obj_80/n02504458_3381_nocrop_obj_0_80_7.jpeg 6 6
+[02:31:17] 17000/18000: /home/haow3/occlusion-project/data/imagenet/dataset/test_nocrop_obj_80/n02276258_5149_nocrop_obj_0_80_8.jpeg 4 4
+positive_true:  [1767, 15852, 15638, 15228, 14450, 0]
+image_sum:  [2000, 18000, 18000, 18000, 18000, 0]
+accuracy:  [0.8835, 0.8806666666666667, 0.8687777777777778, 0.846, 0.8027777777777778, 0.0]
+[02:33:44]     0/18000: /home/haow3/occlusion-project/data/imagenet/dataset/test_nocrop_obj_100/n01855672_13294_nocrop_obj_0_100_0.jpeg 0 0
+[02:35:43]  1000/18000: /home/haow3/occlusion-project/data/imagenet/dataset/test_nocrop_obj_100/n02009912_2454_nocrop_obj_0_100_1.jpeg 8 2
+[02:37:45]  2000/18000: /home/haow3/occlusion-project/data/imagenet/dataset/test_nocrop_obj_100/n02051845_6970_nocrop_obj_0_100_2.jpeg 0 3
+[02:39:42]  3000/18000: /home/haow3/occlusion-project/data/imagenet/dataset/test_nocrop_obj_100/n02398521_10300_nocrop_obj_0_100_3.jpeg 5 5
+[02:41:40]  4000/18000: /home/haow3/occlusion-project/data/imagenet/dataset/test_nocrop_obj_100/n03017168_28746_nocrop_obj_1_100_4.jpeg 8 7
+[02:44:15]  5000/18000: /home/haow3/occlusion-project/data/imagenet/dataset/test_nocrop_obj_100/n03028079_17345_nocrop_obj_0_100_5.jpeg 8 8
+[02:46:40]  6000/18000: /home/haow3/occlusion-project/data/imagenet/dataset/test_nocrop_obj_100/n03109150_4916_nocrop_obj_0_100_6.jpeg 17 9
+[02:48:41]  7000/18000: /home/haow3/occlusion-project/data/imagenet/dataset/test_nocrop_obj_100/n03160309_37705_nocrop_obj_0_100_7.jpeg 8 10
+[02:51:08]  8000/18000: /home/haow3/occlusion-project/data/imagenet/dataset/test_nocrop_obj_100/n03179701_11766_nocrop_obj_0_100_8.jpeg 11 11
+[02:53:24]  9000/18000: /home/haow3/occlusion-project/data/imagenet/dataset/test_nocrop_obj_100/n03770679_10215_nocrop_obj_0_100_0.jpeg 8 13
+[02:55:40] 10000/18000: /home/haow3/occlusion-project/data/imagenet/dataset/test_nocrop_obj_100/n03983396_4829_nocrop_obj_0_100_1.jpeg 14 14
+[02:57:55] 11000/18000: /home/haow3/occlusion-project/data/imagenet/dataset/test_nocrop_obj_100/n04086273_2082_nocrop_obj_0_100_2.jpeg 16 15
+[02:59:46] 12000/18000: /home/haow3/occlusion-project/data/imagenet/dataset/test_nocrop_obj_100/n04372370_7834_nocrop_obj_0_100_3.jpeg 16 16
+[03:01:31] 13000/18000: /home/haow3/occlusion-project/data/imagenet/dataset/test_nocrop_obj_100/n04392985_3834_nocrop_obj_0_100_4.jpeg 17 17
+[03:03:08] 14000/18000: /home/haow3/occlusion-project/data/imagenet/dataset/test_nocrop_obj_100/n04584207_20760_nocrop_obj_0_100_5.jpeg 11 18
+[03:04:45] 15000/18000: /home/haow3/occlusion-project/data/imagenet/dataset/test_nocrop_obj_100/n07720875_258_nocrop_obj_2_100_6.jpeg 19 19
+[03:06:16] 16000/18000: /home/haow3/occlusion-project/data/imagenet/dataset/test_nocrop_obj_100/n02504458_3381_nocrop_obj_0_100_7.jpeg 8 6
+[03:08:22] 17000/18000: /home/haow3/occlusion-project/data/imagenet/dataset/test_nocrop_obj_100/n02276258_5149_nocrop_obj_0_100_8.jpeg 4 4
+positive_true:  [1767, 15852, 15638, 15228, 14450, 13240]
+image_sum:  [2000, 18000, 18000, 18000, 18000, 18000]
+accuracy:  [0.8835, 0.8806666666666667, 0.8687777777777778, 0.846, 0.8027777777777778, 0.7355555555555555]

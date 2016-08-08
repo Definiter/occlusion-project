@@ -10,13 +10,19 @@ import random
 #%matplotlib inline
 
 #### Parameters. ####
-type_str = 'nocrop_obj'
-# type_str =  # crop / nocrop / crop_obj / nocrop_obj / aperture
+type_str = '1k_crop_obj' # {1k_}[crop | nocrop | crop_obj | nocrop_obj | aperture]
+
 #dataset = [(0.0, 0), (1.0/4, 4), (1.0/3, 3), (1.0/2, 3), (2.0/3, 3), (4.0/5, 3), (9.0/10, 3), (1.0, 1)]
 #dataset = [(0.0, 0), (0.1, 10), (0.2, 5), (0.3, 4), (0.4, 3), (0.5, 3), (0.6, 3), (0.7, 3), (0.8, 3), (0.9, 3), (1.0, 1)]
-dataset = [(0.0, 0), (0.2, 9), (0.4, 9), (0.6, 9), (0.8, 9), (1.0, 9)] # when crop_obj or nocrop_obj, (size, total_num)
+#dataset = [(0.0, 0), (0.2, 9), (0.4, 9), (0.6, 9), (0.8, 9), (1.0, 9)] # when crop_obj or nocrop_obj, (size, total_num)
+dataset = [(0.0, 0)]
+
+# divide to training dataset and test dataset
+training_dataset_size = 100
+test_dataset_size = 50
 
 # obj image: always 1024 * 768 pixels
+# TODO add objects sum to 1000
 obj_width = 1024
 obj_height = 768
 obj_ratio = float(obj_width) / obj_height
@@ -59,7 +65,7 @@ for (slider_size, slider_num) in test_dataset:
         os.makedirs(folder)
     test_folders.append(folder)
     
-if type_str == 'crop_obj' or type_str == 'nocrop_obj':
+if 'obj' in type_str:
     obj_images = []
     for image_name in os.listdir(shapenet_root + 'object_nobg/'):
         img = Image.open(shapenet_root + 'object_nobg/' + image_name)
@@ -71,7 +77,7 @@ if type_str == 'crop_obj' or type_str == 'nocrop_obj':
 # path = 'imagenet_root/dataset/train_0/name'
 # {wnid_imgid}_{crop/nocrop}_{rect_i(ifcrop)}_{slider_size}_{i}_{j}
 def generate_datum(img_orig, path, f, class_id, rects, slider_size, slider_num):
-    if type_str == 'crop':
+    if type_str == 'crop' or type_str == '1k_crop':
         if slider_size == 0:
             for rect_i, rect in enumerate(rects):
                 img = copy.copy(img_orig)
@@ -99,7 +105,7 @@ def generate_datum(img_orig, path, f, class_id, rects, slider_size, slider_num):
                         datum_path = '{}_{}_{}_{}_{}_{}.jpeg'.format(path, type_str, rect_i, str(int(100 * slider_size)), str(i), str(j))
                         img.save(datum_path)
                         f.write('{} {}\n'.format(datum_path, str(class_id)))
-    if type_str == 'nocrop':
+    if type_str == 'nocrop' or type_str == '1k_nocrop':
         if slider_size == 0:
             datum_path = '{}_{}_0_0_0_0.jpeg'.format(path, type_str)
             img_orig.save(datum_path)
@@ -124,7 +130,7 @@ def generate_datum(img_orig, path, f, class_id, rects, slider_size, slider_num):
                     img.save(datum_path)
                     f.write('{} {}\n'.format(datum_path, str(class_id)))                    
     
-    if type_str == 'crop_obj':
+    if type_str == 'crop_obj' or type_str == '1k_crop_obj':
         if slider_size == 0:
             for rect_i, rect in enumerate(rects):
                 img = copy.copy(img_orig)
@@ -152,7 +158,7 @@ def generate_datum(img_orig, path, f, class_id, rects, slider_size, slider_num):
                     datum_path = '{}_{}_{}_{}_{}.jpeg'.format(path, type_str, rect_i, int(100 * slider_size), num)
                     img.save(datum_path)
                     f.write('{} {}\n'.format(datum_path, str(class_id)))
-    if type_str == 'nocrop_obj':
+    if type_str == 'nocrop_obj' or type_str == '1k_nocrop_obj':
         if slider_size == 0:
             datum_path = '{}_{}_{}_{}_0.jpeg'.format(path, type_str, 0, int(100 * slider_size))
             img_orig.save(datum_path)
@@ -178,7 +184,7 @@ def generate_datum(img_orig, path, f, class_id, rects, slider_size, slider_num):
                 f.write('{} {}\n'.format(datum_path, str(class_id)))              
                     
                     
-    if type_str == 'aperture':
+    if type_str == 'aperture' or type_str == '1k_aperture':
         if slider_size == 0: # All black.
             for rect_i, rect in enumerate(rects):
                 img = copy.copy(img_orig)
@@ -216,21 +222,27 @@ def generate_datum(img_orig, path, f, class_id, rects, slider_size, slider_num):
                         img.save(datum_path)
                         f.write('{} {}\n'.format(datum_path, str(class_id)))
             
-        
-synset_names = os.listdir(imagenet_root + 'image/')
+if '1k' in type_str:
+    image_path = imagenet_root + 'ILSVRC2015/Data/CLS-LOC/train/'
+    annotation_path =  imagenet_root + 'ILSVRC2015/Annotations/CLS-LOC/train/'
+else:
+    image_path = imagenet_root + 'image/'
+    annotation_path = imagenet_root + 'Annotation/'
+
+synset_names = os.listdir(image_path)
              
 for synset_index, synset_name in enumerate(synset_names):
     print "Processing synset [{}/{}]: {}".format(synset_index, len(synset_names), synset_name)
-    image_names = os.listdir(imagenet_root + 'image/' + synset_name + '/' + synset_name + '_original_images')
-    annotation_names = os.listdir(imagenet_root + 'Annotation/' + synset_name + '/')
+    image_names = os.listdir(image_path + synset_name)
+    annotation_names = os.listdir(annotation_path + synset_name)
     n1 = [os.path.splitext(n)[0] for n in image_names]
     n2 = [os.path.splitext(n)[0] for n in annotation_names]
     intersection_names = list(set(n1) & set(n2))
-    # train : test = 300 : 100
-    for i in range(400):
-        print 'Processing image [{}/{}]: {}'.format(i, 400, intersection_names[i])
+    dataset_sum = training_dataset_size + test_dataset_size
+    for i in range(dataset_sum):
+        print 'Processing image [{}/{}]: {}'.format(i, dataset_sum, intersection_names[i])
         # Read bounding box.
-        bbx_file = open(imagenet_root + 'Annotation/' + synset_name + '/' + intersection_names[i] + '.xml')
+        bbx_file = open(annotation_path + synset_name + '/' + intersection_names[i] + '.xml')
         xmltree = ET.parse(bbx_file)
         objects = xmltree.findall('object')
         rects = []
@@ -238,15 +250,22 @@ for synset_index, synset_name in enumerate(synset_names):
             bbx = obj.find('bndbox')
             rects.append([int(it.text) for it in bbx])
             
-        img_orig = Image.open(imagenet_root + 'image/' + synset_name + '/' + synset_name + '_original_images/' + intersection_names[i] + '.JPEG')
-        if i < 300: # Training dataset. 
+        img_orig = Image.open(image_path + synset_name + '/' + intersection_names[i] + '.JPEG')
+        
+        if '1k' in type_str:
+            wnid_to_label[synset_name]
+        else:
+            class_id = original_to_new_class_id[wnid_to_label[synset_name]]
+        
+        if i < training_dataset_size: # Training dataset. 
             for index, (slider_size, slider_num) in enumerate(training_dataset):
                 generate_datum(img_orig, '{}{}'.format(train_folders[index], intersection_names[i]), \
-                               train_files[index], original_to_new_class_id[wnid_to_label[synset_name]], rects, slider_size, slider_num)
+                               train_files[index], class_id, rects, slider_size, slider_num)
         else: # Testing dataset.
             for index, (slider_size, slider_num) in enumerate(test_dataset):
                 generate_datum(img_orig, '{}{}'.format(test_folders[index], intersection_names[i]), \
-                               test_files[index], original_to_new_class_id[wnid_to_label[synset_name]], rects, slider_size, slider_num)
+                               test_files[index], class_id, rects, slider_size, slider_num)
+    break
             
 for f in train_files:
     f.close()

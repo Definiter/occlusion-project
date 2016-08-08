@@ -15,21 +15,21 @@ parser.add_argument('--net_name', required=True)
 parser.add_argument('--model_type_str', required=True)
 parser.add_argument('--test_type_str', required=True)
 args = parser.parse_args()
+gpu = int(args.gpu)
+net_name = args.net_name
 model_type_str = args.model_type_str
 test_type_str = args.test_type_str
-#test_dataset = [(0.0, 0), (1.0/4, 4), (1.0/3, 3), (1.0/2, 3), (2.0/3, 3), (4.0/5, 3), (9.0/10, 3), (1.0, 1)]
-test_dataset = ['0', '10', '20', '30', '40', '50', '60', '70', '80', '90', '100']
+#test_dataset = ['0', '10', '20', '30', '40', '50', '60', '70', '80', '90', '100']
+test_dataset = ['0', '20', '40', '60', '80', '100']
 ####################
 
 import caffe
 
 is_finetuned = True
 
-gpu = int(args.gpu)
 caffe.set_device(gpu)
 caffe.set_mode_gpu()
 
-net_name = args.net_name
 print 'Processing: finetune_alexnet_{}_{} on GPU {}, test on {}'.format(model_type_str, net_name, gpu, test_type_str)
 
 net = caffe.Net(result_root + 'model/finetune_alexnet_{}_{}/deploy.prototxt'.format(model_type_str, net_name),
