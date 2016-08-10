@@ -1,26 +1,26 @@
-model_type_str=(crop_obj nocrop_obj)
+model_type_strs=(crop_obj nocrop_obj)
 
-for model_str in "${model_type_str[@]}"
+for model_type_str in "${model_type_strs[@]}"
 do
-    echo $model_str
-    qsub -q taising -v gpu=0,net_name=0,type_str=$model_str   -l nodes=compute-1-1 pbs_finetune.script 
-    qsub -q taising -v gpu=1,net_name=20,type_str=$model_str  -l nodes=compute-1-1 pbs_finetune.script 
-    qsub -q taising -v gpu=2,net_name=40,type_str=$model_str  -l nodes=compute-1-1 pbs_finetune.script 
-    qsub -q taising -v gpu=3,net_name=60,type_str=$model_str  -l nodes=compute-1-1 pbs_finetune.script 
-    qsub -q taising -v gpu=0,net_name=80,type_str=$model_str  -l nodes=compute-1-3 pbs_finetune.script 
-    qsub -q taising -v gpu=1,net_name=100,type_str=$model_str -l nodes=compute-1-3 pbs_finetune.script 
-    qsub -q taising -v gpu=2,net_name=all,type_str=$model_str -l nodes=compute-1-3 pbs_finetune.script 
+    echo $model_type_str
+    qsub -q taising -v gpu=0,model_name=0,model_type_str=$model_type_str   -l nodes=compute-1-1 pbs_finetune.script 
+    qsub -q taising -v gpu=1,model_name=20,model_type_str=$model_type_str  -l nodes=compute-1-1 pbs_finetune.script 
+    qsub -q taising -v gpu=2,model_name=40,model_type_str=$model_type_str  -l nodes=compute-1-1 pbs_finetune.script 
+    qsub -q taising -v gpu=3,model_name=60,model_type_str=$model_type_str  -l nodes=compute-1-1 pbs_finetune.script 
+    qsub -q taising -v gpu=0,model_name=80,model_type_str=$model_type_str  -l nodes=compute-1-3 pbs_finetune.script 
+    qsub -q taising -v gpu=1,model_name=100,model_type_str=$model_type_str -l nodes=compute-1-3 pbs_finetune.script 
+    qsub -q taising -v gpu=2,model_name=all,model_type_str=$model_type_str -l nodes=compute-1-3 pbs_finetune.script 
     
 
-    # qsub -q taising -v gpu=0,net_name=0,type_str=$model_str   -l nodes=compute-1-1 pbs_finetune.script 
-    # qsub -q taising -v gpu=1,net_name=10,type_str=$model_str  -l nodes=compute-1-1 pbs_finetune.script 
-    # qsub -q taising -v gpu=2,net_name=20,type_str=$model_str  -l nodes=compute-1-1 pbs_finetune.script 
-    # qsub -q taising -v gpu=3,net_name=30,type_str=$model_str  -l nodes=compute-1-1 pbs_finetune.script 
-    # qsub -q taising -v gpu=0,net_name=40,type_str=$model_str  -l nodes=compute-1-3 pbs_finetune.script 
-    # qsub -q taising -v gpu=1,net_name=50,type_str=$model_str  -l nodes=compute-1-3 pbs_finetune.script 
-    # qsub -q taising -v gpu=2,net_name=60,type_str=$model_str  -l nodes=compute-1-3 pbs_finetune.script 
-    # qsub -q taising -v gpu=3,net_name=70,type_str=$model_str  -l nodes=compute-1-3 pbs_finetune.script 
-    # qsub -q taising -v gpu=0,net_name=80,type_str=$model_str  -l nodes=compute-1-3 pbs_finetune.script 
-    # qsub -q taising -v gpu=1,net_name=90,type_str=$model_str  -l nodes=compute-1-3 pbs_finetune.script 
-    # qsub -q taising -v gpu=2,net_name=all,type_str=$model_str  -l nodes=compute-1-3 pbs_finetune.script 
+    # qsub -q taising -v gpu=0,model_name=0,model_type_str=$model_type_str   -l nodes=compute-1-1 pbs_finetune.script 
+    # qsub -q taising -v gpu=1,model_name=10,model_type_str=$model_type_str  -l nodes=compute-1-1 pbs_finetune.script 
+    # qsub -q taising -v gpu=2,model_name=20,model_type_str=$model_type_str  -l nodes=compute-1-1 pbs_finetune.script 
+    # qsub -q taising -v gpu=3,model_name=30,model_type_str=$model_type_str  -l nodes=compute-1-1 pbs_finetune.script 
+    # qsub -q taising -v gpu=0,model_name=40,model_type_str=$model_type_str  -l nodes=compute-1-3 pbs_finetune.script 
+    # qsub -q taising -v gpu=1,model_name=50,model_type_str=$model_type_str  -l nodes=compute-1-3 pbs_finetune.script 
+    # qsub -q taising -v gpu=2,model_name=60,model_type_str=$model_type_str  -l nodes=compute-1-3 pbs_finetune.script 
+    # qsub -q taising -v gpu=3,model_name=70,model_type_str=$model_type_str  -l nodes=compute-1-3 pbs_finetune.script 
+    # qsub -q taising -v gpu=0,model_name=80,model_type_str=$model_type_str  -l nodes=compute-1-3 pbs_finetune.script 
+    # qsub -q taising -v gpu=1,model_name=90,model_type_str=$model_type_str  -l nodes=compute-1-3 pbs_finetune.script 
+    # qsub -q taising -v gpu=2,model_name=all,model_type_str=$model_type_str  -l nodes=compute-1-3 pbs_finetune.script 
 done

@@ -5,24 +5,30 @@ import numpy as np
 from PIL import Image, ImageDraw
 import xml.etree.ElementTree as ET
 import copy
-from matplotlib.pyplot import imshow
 import random
-#%matplotlib inline
+import time
+import argparse
 
 #### Parameters. ####
-type_str = '1k_crop_obj' # {1k_}[crop | nocrop | crop_obj | nocrop_obj | aperture]
+parser = argparse.ArgumentParser()
+parser.add_argument('--dataset_index', required=True)
+parser.add_argument('--type_str', required=True)
+args = parser.parse_args()
+
+#type_str = '1k_nocrop_obj' # {1k_}[crop | nocrop | crop_obj | nocrop_obj | aperture]
+type_str = args.type_str
 
 #dataset = [(0.0, 0), (1.0/4, 4), (1.0/3, 3), (1.0/2, 3), (2.0/3, 3), (4.0/5, 3), (9.0/10, 3), (1.0, 1)]
 #dataset = [(0.0, 0), (0.1, 10), (0.2, 5), (0.3, 4), (0.4, 3), (0.5, 3), (0.6, 3), (0.7, 3), (0.8, 3), (0.9, 3), (1.0, 1)]
-#dataset = [(0.0, 0), (0.2, 9), (0.4, 9), (0.6, 9), (0.8, 9), (1.0, 9)] # when crop_obj or nocrop_obj, (size, total_num)
-dataset = [(0.0, 0)]
+dataset = [(0.0, 0), (0.2, 9), (0.4, 9), (0.6, 9), (0.8, 9), (1.0, 9)] # when crop_obj or nocrop_obj, (size, total_num)
+dataset = [dataset[int(args.dataset_index)]]
+print 'Processsing dataset {}, type_str {}'.format(dataset[0], type_str)
 
 # divide to training dataset and test dataset
 training_dataset_size = 100
 test_dataset_size = 50
 
 # obj image: always 1024 * 768 pixels
-# TODO add objects sum to 1000
 obj_width = 1024
 obj_height = 768
 obj_ratio = float(obj_width) / obj_height
@@ -67,10 +73,13 @@ for (slider_size, slider_num) in test_dataset:
     
 if 'obj' in type_str:
     obj_images = []
-    for image_name in os.listdir(shapenet_root + 'object_nobg/'):
-        img = Image.open(shapenet_root + 'object_nobg/' + image_name)
+    for i, image_name in enumerate(os.listdir(shapenet_root + 'object_nobg/')):
+        img_temp = Image.open(shapenet_root + 'object_nobg/' + image_name)
+        img = img_temp.copy()
+        img_temp.close()
         #img = img.convert("RGBA")
         obj_images.append(img)
+print "{} object occluders loaded.".format(len(obj_images))
 
 # occluder size = slider_size * slider_size
 # occluder num = slider_num * slider_num
@@ -80,7 +89,7 @@ def generate_datum(img_orig, path, f, class_id, rects, slider_size, slider_num):
     if type_str == 'crop' or type_str == '1k_crop':
         if slider_size == 0:
             for rect_i, rect in enumerate(rects):
-                img = copy.copy(img_orig)
+                img = img_orig.copy()
                 img = img.crop(rect)
                 datum_path = '{}_{}_{}_0_0_0.jpeg'.format(path, type_str, rect_i)
                 img.save(datum_path)
@@ -89,7 +98,7 @@ def generate_datum(img_orig, path, f, class_id, rects, slider_size, slider_num):
             for rect_i, rect in enumerate(rects):
                 for i in range(slider_num):
                     for j in range(slider_num):
-                        img = copy.copy(img_orig)
+                        img = img_orig.copy()
                         d = ImageDraw.Draw(img)
                         if (slider_num == 1):
                             delta = 1
@@ -113,7 +122,7 @@ def generate_datum(img_orig, path, f, class_id, rects, slider_size, slider_num):
         else:
             for i in range(slider_num):
                 for j in range(slider_num):
-                    img = copy.copy(img_orig)
+                    img = img_orig.copy()
                     d = ImageDraw.Draw(img)
                     if (slider_num == 1):
                         delta = 1
@@ -133,7 +142,7 @@ def generate_datum(img_orig, path, f, class_id, rects, slider_size, slider_num):
     if type_str == 'crop_obj' or type_str == '1k_crop_obj':
         if slider_size == 0:
             for rect_i, rect in enumerate(rects):
-                img = copy.copy(img_orig)
+                img = img_orig.copy()
                 img = img.crop(rect)
                 datum_path = '{}_{}_{}_{}_0.jpeg'.format(path, type_str, rect_i, int(100 * slider_size))
                 img.save(datum_path)
@@ -141,8 +150,8 @@ def generate_datum(img_orig, path, f, class_id, rects, slider_size, slider_num):
         else:
             for rect_i, rect in enumerate(rects):
                 for num in range(slider_num):
-                    img = copy.copy(img_orig)
-                    random_obj = copy.copy(obj_images[random.randint(0, len(obj_images) - 1)])
+                    img = img_orig.copy()
+                    random_obj = obj_images[random.randint(0, len(obj_images) - 1)].copy()
                     width = rect[2] - rect[0]
                     height = rect[3] - rect[1]
                     ratio = float(width) / height
@@ -150,14 +159,28 @@ def generate_datum(img_orig, path, f, class_id, rects, slider_size, slider_num):
                         resize_scale = float(height) / obj_height * slider_size
                     else:
                         resize_scale = float(width) / obj_width * slider_size
-                    random_obj = random_obj.resize((int(obj_width * resize_scale), int(obj_height * resize_scale)), Image.ANTIALIAS)
-                    top_left = (random.randint(rect[0], rect[2] - random_obj.size[0]), \
-                                random.randint(rect[1], rect[3] - random_obj.size[1]))
+                    new_width = int(obj_width * resize_scale)
+                    new_height = int(obj_height * resize_scale)
+                    if new_width == 0:
+                        new_width = 1
+                    if new_height == 0:
+                        new_height = 1
+                    random_obj = random_obj.resize((new_width, new_height), Image.ANTIALIAS)
+                    
+                    rangex = [rect[0], rect[2] - random_obj.size[0]]
+                    if rangex[1] < rangex[0]:
+                        rangex[1] = rangex[0]
+                        
+                    rangey = [rect[1], rect[3] - random_obj.size[1]]
+                    if rangey[1] < rangey[0]:
+                        rangey[1] = rangey[0]
+                    top_left = (random.randint(rangex[0], rangex[1]), random.randint(rangey[0], rangey[1]))
                     img.paste(random_obj, top_left, random_obj)
                     img = img.crop(rect)
                     datum_path = '{}_{}_{}_{}_{}.jpeg'.format(path, type_str, rect_i, int(100 * slider_size), num)
                     img.save(datum_path)
                     f.write('{} {}\n'.format(datum_path, str(class_id)))
+                    
     if type_str == 'nocrop_obj' or type_str == '1k_nocrop_obj':
         if slider_size == 0:
             datum_path = '{}_{}_{}_{}_0.jpeg'.format(path, type_str, 0, int(100 * slider_size))
@@ -165,9 +188,9 @@ def generate_datum(img_orig, path, f, class_id, rects, slider_size, slider_num):
             f.write('{} {}\n'.format(datum_path, str(class_id)))
         else:
             for num in range(slider_num):
-                img = copy.copy(img_orig)
+                img = img_orig.copy()
                 for rect_i, rect in enumerate(rects):
-                    random_obj = copy.copy(obj_images[random.randint(0, len(obj_images) - 1)])
+                    random_obj = obj_images[random.randint(0, len(obj_images) - 1)].copy()
                     width = rect[2] - rect[0]
                     height = rect[3] - rect[1]
                     ratio = float(width) / height
@@ -175,10 +198,24 @@ def generate_datum(img_orig, path, f, class_id, rects, slider_size, slider_num):
                         resize_scale = float(height) / obj_height * slider_size
                     else:
                         resize_scale = float(width) / obj_width * slider_size
-                    random_obj = random_obj.resize((int(obj_width * resize_scale), int(obj_height * resize_scale)), Image.ANTIALIAS)
-                    top_left = (random.randint(rect[0], rect[2] - random_obj.size[0]), \
-                                random.randint(rect[1], rect[3] - random_obj.size[1]))
+                    new_width = int(obj_width * resize_scale)
+                    new_height = int(obj_height * resize_scale)
+                    if new_width == 0:
+                        new_width = 1
+                    if new_height == 0:
+                        new_height = 1
+                    random_obj = random_obj.resize((new_width, new_height), Image.ANTIALIAS)
+                    
+                    rangex = [rect[0], rect[2] - random_obj.size[0]]
+                    if rangex[1] < rangex[0]:
+                        rangex[1] = rangex[0]
+                        
+                    rangey = [rect[1], rect[3] - random_obj.size[1]]
+                    if rangey[1] < rangey[0]:
+                        rangey[1] = rangey[0]
+                    top_left = (random.randint(rangex[0], rangex[1]), random.randint(rangey[0], rangey[1]))
                     img.paste(random_obj, top_left, random_obj)
+                    
                 datum_path = '{}_{}_{}_{}_{}.jpeg'.format(path, type_str, rect_i, int(100 * slider_size), num)
                 img.save(datum_path)
                 f.write('{} {}\n'.format(datum_path, str(class_id)))              
@@ -187,7 +224,7 @@ def generate_datum(img_orig, path, f, class_id, rects, slider_size, slider_num):
     if type_str == 'aperture' or type_str == '1k_aperture':
         if slider_size == 0: # All black.
             for rect_i, rect in enumerate(rects):
-                img = copy.copy(img_orig)
+                img = img_orig.copy()
                 d = ImageDraw.Draw(img)
                 d.rectangle(rect, fill="black", outline=None)
                 img = img.crop(rect)
@@ -196,7 +233,7 @@ def generate_datum(img_orig, path, f, class_id, rects, slider_size, slider_num):
                 f.write('{} {}\n'.format(datum_path, str(class_id)))
         elif slider_size == 1: # All visible. 
             for rect_i, rect in enumerate(rects):
-                img = copy.copy(img_orig)
+                img = img_orig.copy()
                 img = img.crop(rect)
                 datum_path = '{}_{}_{}_{}_0_0.jpeg'.format(path, type_str, rect_i, str(int(100 * slider_size)))
                 img.save(datum_path)
@@ -205,7 +242,7 @@ def generate_datum(img_orig, path, f, class_id, rects, slider_size, slider_num):
             for rect_i, rect in enumerate(rects):
                 for i in range(slider_num):
                     for j in range(slider_num):
-                        img = copy.copy(img_orig)
+                        img = img_orig.copy()
                         d = ImageDraw.Draw(img)
                         delta = (1 - slider_size) / float(slider_num - 1)
                         subrect = [0, 0, 0, 0]
@@ -230,17 +267,31 @@ else:
     annotation_path = imagenet_root + 'Annotation/'
 
 synset_names = os.listdir(image_path)
-             
+            
+start_time = time.time()
+
+dataset_sum = training_dataset_size + test_dataset_size
+all_sum = len(synset_names) * dataset_sum
+print all_sum
 for synset_index, synset_name in enumerate(synset_names):
-    print "Processing synset [{}/{}]: {}".format(synset_index, len(synset_names), synset_name)
     image_names = os.listdir(image_path + synset_name)
     annotation_names = os.listdir(annotation_path + synset_name)
     n1 = [os.path.splitext(n)[0] for n in image_names]
     n2 = [os.path.splitext(n)[0] for n in annotation_names]
     intersection_names = list(set(n1) & set(n2))
-    dataset_sum = training_dataset_size + test_dataset_size
     for i in range(dataset_sum):
-        print 'Processing image [{}/{}]: {}'.format(i, dataset_sum, intersection_names[i])
+        if (i + 1) % 50 == 0:
+            second = int(time.time() - start_time)
+            print 'now second:', second
+            now_time = time.strftime("%H:%M:%S", time.gmtime(second))
+            now_sum = synset_index * dataset_sum + i
+            print 'now_sum:', now_sum
+            
+            estimated = int(float(all_sum) / now_sum * second)
+            print 'estimated:', estimated
+            estimated_time = time.strftime("%H:%M:%S", time.gmtime(estimated))
+            estimated_day = estimated / 3600 / 24
+            print '[{}/{} {}]Processing synset [{}/{}], image [{}/{}]: {}'.format(now_time, estimated_day, estimated_time, synset_index + 1, len(synset_names), i + 1, dataset_sum, intersection_names[i])
         # Read bounding box.
         bbx_file = open(annotation_path + synset_name + '/' + intersection_names[i] + '.xml')
         xmltree = ET.parse(bbx_file)
@@ -253,7 +304,7 @@ for synset_index, synset_name in enumerate(synset_names):
         img_orig = Image.open(image_path + synset_name + '/' + intersection_names[i] + '.JPEG')
         
         if '1k' in type_str:
-            wnid_to_label[synset_name]
+            class_id = wnid_to_label[synset_name]
         else:
             class_id = original_to_new_class_id[wnid_to_label[synset_name]]
         
@@ -265,7 +316,6 @@ for synset_index, synset_name in enumerate(synset_names):
             for index, (slider_size, slider_num) in enumerate(test_dataset):
                 generate_datum(img_orig, '{}{}'.format(test_folders[index], intersection_names[i]), \
                                test_files[index], class_id, rects, slider_size, slider_num)
-    break
             
 for f in train_files:
     f.close()
