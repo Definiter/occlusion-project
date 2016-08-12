@@ -1,4 +1,4 @@
 #PBS -S /bin/bash
 #PBS -l walltime=24:00:00
 
-python ~/occlusion-project/src/finetune.py --gpu=${gpu} --model_name=${net_name} --model_type_str=${model_type_str} 
+python ~/occlusion-project/src/finetune.py --gpu=${gpu} --model_name=${model_name} --model_type_str=${model_type_str} 

@@ -7,7 +7,7 @@ import cPickle
 from pylab import *
 import argparse
 
-'''
+#### Parameters ####
 parser = argparse.ArgumentParser()
 parser.add_argument('--gpu', default=0, required=False)
 parser.add_argument('--model_name', required=True)
@@ -16,15 +16,18 @@ args = parser.parse_args()
 gpu = int(args.gpu)
 model_name = args.model_name
 model_type_str = args.model_type_str
+
+'''
+gpu = 0
+model_name = '0'
+model_type_str = '1k_crop_obj'
 '''
 
-gpu = 0
-model_name = '60'
-model_type_str = '1k_nocrop_obj'
+####################
 
 import caffe
 
-niter = 10000
+niter = 40000
 # Losses will also be stored in the log.
 train_loss = np.zeros(niter)
 train_accuracy = np.zeros(niter)
@@ -36,7 +39,7 @@ caffe.set_mode_gpu()
 print 'Processing: finetune_alexnet_{}_{}'.format(model_type_str, model_name), 'on GPU', gpu, ',', model_type_str
 
 solver = caffe.SGDSolver(result_root + 'model/finetune_alexnet_{}_{}/solver.prototxt'.format(model_type_str, model_name))
-solver.net.copy_from(imagenet_root + 'model/bvlc_alexnet/bvlc_alexnet.caffemodel')
+solver.net.copy_from(result_root + 'model/bvlc_alexnet/bvlc_alexnet.caffemodel')
 
 start_time = time.time()
 # We run the solver for niter times, and record the training loss.

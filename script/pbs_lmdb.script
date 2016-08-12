@@ -1,0 +1,6 @@
+#PBS -S /bin/bash
+#PBS -l walltime=96:00:00
+
+CONV_TOOL=/home/haow3/software/caffe-rc3/build/tools/convert_imageset
+
+$CONV_TOOL -resize_height=256 -resize_width=256 -shuffle=true /data2/haow3/data/imagenet/dataset/ /data2/haow3/data/imagenet/dataset/${func_str}_${type_str}_${name}.txt /data2/haow3/data/imagenet/lmdb/${func_str}_${type_str}_${name}

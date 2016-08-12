@@ -1,4 +1,4 @@
-model_type_strs=(crop_obj nocrop_obj)
+model_type_strs=(1k_crop_obj 1k_nocrop_obj)
 
 for model_type_str in "${model_type_strs[@]}"
 do
