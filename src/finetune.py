@@ -20,14 +20,14 @@ model_type_str = args.model_type_str
 '''
 gpu = 0
 model_name = '0'
-model_type_str = '1k_crop_obj'
+model_type_str = '1k_nocrop_obj'
 '''
 
 ####################
 
 import caffe
 
-niter = 40000
+niter = 30000
 # Losses will also be stored in the log.
 train_loss = np.zeros(niter)
 train_accuracy = np.zeros(niter)
