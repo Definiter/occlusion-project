@@ -8,6 +8,7 @@ from pylab import *
 import argparse
 
 #### Parameters ####
+
 parser = argparse.ArgumentParser()
 parser.add_argument('--gpu', default=0, required=False)
 parser.add_argument('--model_name', required=True)
@@ -20,18 +21,18 @@ model_type_str = args.model_type_str
 '''
 gpu = 0
 model_name = '0'
-model_type_str = '1k_nocrop_obj'
+model_type_str = 'nocrop'
 '''
 
 ####################
 
 import caffe
 
-niter = 30000
+niter = 10000
 # Losses will also be stored in the log.
 train_loss = np.zeros(niter)
 train_accuracy = np.zeros(niter)
-test_accuracy = {}
+val_accuracy = {}
 
 caffe.set_device(gpu)
 caffe.set_mode_gpu()
@@ -59,8 +60,8 @@ for it in range(niter):
             solver.test_nets[0].forward()
             accuracy += solver.test_nets[0].blobs['accuracy_test'].data
         accuracy /= test_iters
-        test_accuracy[it] = accuracy
-        print '[{} / {}d {}] iter{:6} | train_loss={:10.6f}, train_accuracy={:10.6f}, test_accuracy={:10.6f}'.format(now_time, estimated_day, estimated_time, it, float(train_loss[it]), float(train_accuracy[it]), accuracy)
+        val_accuracy[it] = accuracy
+        print '[{} / {}d {}] iter{:6} | train_loss={:10.6f}, train_accuracy={:10.6f}, val_accuracy={:10.6f}'.format(now_time, estimated_day, estimated_time, it, float(train_loss[it]), float(train_accuracy[it]), accuracy)
     elif it % 10 == 0:
         print '[{} / {}d {}] iter{:6} | train_loss={:10.6f}, train_accuracy={:10.6f}'.format(now_time, estimated_day, estimated_time, it, float(train_loss[it]), float(train_accuracy[it]))
         
@@ -70,7 +71,7 @@ with open(result_root + 'finetune/train_loss_{}_{}.pickle'.format(model_type_str
     cPickle.dump(train_loss, f)
 with open(result_root + 'finetune/train_accuracy_{}_{}.pickle'.format(model_type_str, model_name), 'wb') as f:
     cPickle.dump(train_accuracy, f)
-with open(result_root + 'finetune/test_accuracy_{}_{}.pickle'.format(model_type_str, model_name), 'wb') as f:
-    cPickle.dump(test_accuracy, f)
+with open(result_root + 'finetune/val_accuracy_{}_{}.pickle'.format(model_type_str, model_name), 'wb') as f:
+    cPickle.dump(val_accuracy, f)
 
 print 'done'
