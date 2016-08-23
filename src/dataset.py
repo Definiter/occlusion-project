@@ -16,7 +16,7 @@ parser.add_argument('--dataset_index', required=True)
 parser.add_argument('--type_str', required=True)
 args = parser.parse_args()
 
-#type_str = 'nocrop' # {1k_}[crop | nocrop | crop_obj | nocrop_obj | aperture]
+#type_str = 'aperture' # {1k_}[crop | nocrop | crop_obj | nocrop_obj | aperture]
 type_str = args.type_str
 
 #dataset = [(0.0, 0), (1.0/4, 4), (1.0/3, 3), (1.0/2, 3), (2.0/3, 3), (4.0/5, 3), (9.0/10, 3), (1.0, 1)]
@@ -148,7 +148,49 @@ def generate_datum(img_orig, path, f, class_id, rects, slider_size, slider_num):
                     d.rectangle(subrect, fill=mean_color, outline=None)
                 datum_path = '{}_{}_{}_{}_{}.jpeg'.format(path, type_str, 0, str(int(100 * slider_size)), i)
                 img.save(datum_path)
-                f.write('{} {}\n'.format(datum_path, str(class_id)))                    
+                f.write('{} {}\n'.format(datum_path, str(class_id)))   
+                
+                
+    if type_str == 'aperture' or type_str == '1k_aperture':
+        if slider_size == 0: # All gray.
+            for rect_i, rect in enumerate(rects):
+                img = img_orig.copy()
+                d = ImageDraw.Draw(img)
+                d.rectangle(rect, fill=mean_color, outline=None)
+                img = img.crop(rect)
+                datum_path = '{}_{}_{}_{}_0.jpeg'.format(path, type_str, rect_i, str(int(100 * slider_size)))
+                img.save(datum_path)
+                f.write('{} {}\n'.format(datum_path, str(class_id)))
+        elif slider_size == 1: # All visible. 
+            for rect_i, rect in enumerate(rects):
+                img = img_orig.copy()
+                img = img.crop(rect)
+                datum_path = '{}_{}_{}_{}_0.jpeg'.format(path, type_str, rect_i, str(int(100 * slider_size)))
+                img.save(datum_path)
+                f.write('{} {}\n'.format(datum_path, str(class_id)))
+        else:
+            for rect_i, rect in enumerate(rects):
+                for i in range(slider_num):
+                    img = img_orig.copy()
+                    d = ImageDraw.Draw(img)
+                    
+                    slider_width = int((rect[2] - rect[0]) * math.sqrt(slider_size))
+                    slider_height = int((rect[3] - rect[1]) * math.sqrt(slider_size))
+                    
+                    subrect = [0, 0, 0, 0]
+                    subrect[0] = random.randint(rect[0], rect[2] - slider_width)
+                    subrect[1] = random.randint(rect[1], rect[3] - slider_height)
+                    subrect[2] = subrect[0] + slider_width
+                    subrect[3] = subrect[1] + slider_height
+
+                    d.rectangle([0, 0, img.size[0], subrect[1]], fill=mean_color, outline=None)
+                    d.rectangle([0, 0, subrect[0], img.size[1]], fill=mean_color, outline=None)
+                    d.rectangle([subrect[2], 0, img.size[0], img.size[1]], fill=mean_color, outline=None)
+                    d.rectangle([0, subrect[3], img.size[0], img.size[1]], fill=mean_color, outline=None)
+                    img = img.crop(rect)
+                    datum_path = '{}_{}_{}_{}_{}.jpeg'.format(path, type_str, rect_i, str(int(100 * slider_size)), i)
+                    img.save(datum_path)
+                    f.write('{} {}\n'.format(datum_path, str(class_id)))
     
     if type_str == 'crop_obj' or type_str == '1k_crop_obj':
         if slider_size == 0:
@@ -232,50 +274,14 @@ def generate_datum(img_orig, path, f, class_id, rects, slider_size, slider_num):
                 f.write('{} {}\n'.format(datum_path, str(class_id)))              
                     
                     
-    if type_str == 'aperture' or type_str == '1k_aperture':
-        if slider_size == 0: # All black.
-            for rect_i, rect in enumerate(rects):
-                img = img_orig.copy()
-                d = ImageDraw.Draw(img)
-                d.rectangle(rect, fill="black", outline=None)
-                img = img.crop(rect)
-                datum_path = '{}_{}_{}_{}_0_0.jpeg'.format(path, type_str, rect_i, str(int(100 * slider_size)))
-                img.save(datum_path)
-                f.write('{} {}\n'.format(datum_path, str(class_id)))
-        elif slider_size == 1: # All visible. 
-            for rect_i, rect in enumerate(rects):
-                img = img_orig.copy()
-                img = img.crop(rect)
-                datum_path = '{}_{}_{}_{}_0_0.jpeg'.format(path, type_str, rect_i, str(int(100 * slider_size)))
-                img.save(datum_path)
-                f.write('{} {}\n'.format(datum_path, str(class_id)))
-        else:
-            for rect_i, rect in enumerate(rects):
-                for i in range(slider_num):
-                    for j in range(slider_num):
-                        img = img_orig.copy()
-                        d = ImageDraw.Draw(img)
-                        delta = (1 - slider_size) / float(slider_num - 1)
-                        subrect = [0, 0, 0, 0]
-                        subrect[0] = rect[0] + i * (rect[2] - rect[0]) * delta
-                        subrect[1] = rect[1] + j * (rect[3] - rect[1]) * delta
-                        subrect[2] = subrect[0] + (rect[2] - rect[0]) * slider_size
-                        subrect[3] = subrect[1] + (rect[3] - rect[1]) * slider_size
-                        d.rectangle([0, 0, img.size[0], subrect[1]], fill="black", outline=None)
-                        d.rectangle([0, 0, subrect[0], img.size[1]], fill="black", outline=None)
-                        d.rectangle([subrect[2], 0, img.size[0], img.size[1]], fill="black", outline=None)
-                        d.rectangle([0, subrect[3], img.size[0], img.size[1]], fill="black", outline=None)
-                        img = img.crop(rect)
-                        datum_path = '{}_{}_{}_{}_{}_{}.jpeg'.format(path, type_str, rect_i, str(int(100 * slider_size)), str(i), str(j))
-                        img.save(datum_path)
-                        f.write('{} {}\n'.format(datum_path, str(class_id)))
+    
             
 image_path = imagenet_root + 'ILSVRC2015/Data/CLS-LOC/train/'
 annotation_path =  imagenet_root + 'ILSVRC2015/Annotations/CLS-LOC/train/'
 
 if '1k' in type_str:
     synset_names = os.listdir(image_path)
-            
+
 start_time = time.time()
 
 dataset_sum = training_dataset_size + validation_dataset_size + test_dataset_size

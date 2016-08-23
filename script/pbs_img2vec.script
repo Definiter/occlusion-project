@@ -1,0 +1,4 @@
+#PBS -S /bin/bash
+#PBS -l walltime=24:00:00
+
+python ~/occlusion-project/src/img2vec.py --gpu=${gpu} --model_type_str=${model_type_str} --model_name=${model_name} --test_type_str=${test_type_str} --test_name=${test_name}
