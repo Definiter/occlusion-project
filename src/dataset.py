@@ -16,7 +16,7 @@ parser.add_argument('--dataset_index', required=True)
 parser.add_argument('--type_str', required=True)
 args = parser.parse_args()
 
-#type_str = 'aperture' # {1k_}[crop | nocrop | crop_obj | nocrop_obj | aperture]
+#type_str = 'crop_obj' # {1k_}[crop | nocrop | crop_obj | nocrop_obj | aperture]
 type_str = args.type_str
 
 #dataset = [(0.0, 0), (1.0/4, 4), (1.0/3, 3), (1.0/2, 3), (2.0/3, 3), (4.0/5, 3), (9.0/10, 3), (1.0, 1)]
@@ -25,7 +25,7 @@ type_str = args.type_str
 dataset = [(0.0, 0),  (0.1, 10), (0.2, 10), (0.3, 10), (0.4, 10),\
            (0.5, 10), (0.6, 10), (0.7, 10), (0.8, 10), (0.9, 10), (1.0, 1)]
 dataset_index = int(args.dataset_index)
-#dataset_index = 5
+#dataset_index = 7
 print 'Processsing dataset {}, type_str {}'.format(dataset[dataset_index], type_str)
 dataset = [dataset[dataset_index]]
 
@@ -34,10 +34,6 @@ training_dataset_size = 300
 validation_dataset_size = 100
 test_dataset_size = 100
 
-# obj image: always 1024 * 768 pixels
-obj_width = 1024
-obj_height = 768
-obj_ratio = float(obj_width) / obj_height
 #####################
 
 mean_color = (123, 117, 104)
@@ -90,8 +86,8 @@ for (slider_size, slider_num) in dataset:
     
 if 'obj' in type_str:
     obj_images = []
-    for i, image_name in enumerate(os.listdir(shapenet_root + 'object_nobg/')):
-        img_temp = Image.open(shapenet_root + 'object_nobg/' + image_name)
+    for i, image_name in enumerate(os.listdir(shapenet_root + 'object_crop/')):
+        img_temp = Image.open(shapenet_root + 'object_crop/' + image_name)
         img = img_temp.copy()
         img_temp.close()
         #img = img.convert("RGBA")
@@ -192,6 +188,7 @@ def generate_datum(img_orig, path, f, class_id, rects, slider_size, slider_num):
                     img.save(datum_path)
                     f.write('{} {}\n'.format(datum_path, str(class_id)))
     
+    # TODO no obj_ratio, obj_width, obj_height now
     if type_str == 'crop_obj' or type_str == '1k_crop_obj':
         if slider_size == 0:
             for rect_i, rect in enumerate(rects):
@@ -205,29 +202,44 @@ def generate_datum(img_orig, path, f, class_id, rects, slider_size, slider_num):
                 for num in range(slider_num):
                     img = img_orig.copy()
                     random_obj = obj_images[random.randint(0, len(obj_images) - 1)].copy()
+                    obj_width = random_obj.size[0]
+                    obj_height = random_obj.size[1]
+                    obj_ratio = float(obj_width) / obj_height
+                    
                     width = rect[2] - rect[0]
                     height = rect[3] - rect[1]
                     ratio = float(width) / height
+                    
+                    max_occlusion = 0.0
                     if ratio >= obj_ratio:
-                        resize_scale = float(height) / obj_height * slider_size
+                        max_occlusion = obj_width * height / float(width * obj_height)
                     else:
-                        resize_scale = float(width) / obj_width * slider_size
-                    new_width = int(obj_width * resize_scale)
-                    new_height = int(obj_height * resize_scale)
+                        max_occlusion = width * obj_height / float(height * obj_width)
+                    
+                    if max_occlusion >= slider_size:
+                        # Do not need to stretch and change obj_ratio.
+                        new_width = (slider_size * width * height * obj_width / float(obj_height)) ** 0.5
+                        new_height = (slider_size * width * height * obj_height / float(obj_width)) ** 0.5
+                    else:
+                        # Need to stretch and change obj_ratio.
+                        if ratio >= obj_ratio:
+                            new_width = width * slider_size
+                            new_height = height
+                        else:
+                            new_width = width
+                            new_height = height * slider_size
+                    new_width = int(new_width)
+                    new_height = int(new_height)
                     if new_width == 0:
                         new_width = 1
                     if new_height == 0:
                         new_height = 1
+                        
                     random_obj = random_obj.resize((new_width, new_height), Image.ANTIALIAS)
                     
-                    rangex = [rect[0], rect[2] - random_obj.size[0]]
-                    if rangex[1] < rangex[0]:
-                        rangex[1] = rangex[0]
-                        
-                    rangey = [rect[1], rect[3] - random_obj.size[1]]
-                    if rangey[1] < rangey[0]:
-                        rangey[1] = rangey[0]
-                    top_left = (random.randint(rangex[0], rangex[1]), random.randint(rangey[0], rangey[1]))
+                    top_left = (random.randint(rect[0], rect[2] - random_obj.size[0]),\
+                                random.randint(rect[1], rect[3] - random_obj.size[1]))
+                    
                     img.paste(random_obj, top_left, random_obj)
                     img = img.crop(rect)
                     datum_path = '{}_{}_{}_{}_{}.jpeg'.format(path, type_str, rect_i, int(100 * slider_size), num)
@@ -244,37 +256,50 @@ def generate_datum(img_orig, path, f, class_id, rects, slider_size, slider_num):
                 img = img_orig.copy()
                 for rect_i, rect in enumerate(rects):
                     random_obj = obj_images[random.randint(0, len(obj_images) - 1)].copy()
+                    
+                    obj_width = random_obj.size[0]
+                    obj_height = random_obj.size[1]
+                    obj_ratio = float(obj_width) / obj_height
+                    
                     width = rect[2] - rect[0]
                     height = rect[3] - rect[1]
                     ratio = float(width) / height
+                    
+                    max_occlusion = 0.0
                     if ratio >= obj_ratio:
-                        resize_scale = float(height) / obj_height * slider_size
+                        max_occlusion = obj_width * height / float(width * obj_height)
                     else:
-                        resize_scale = float(width) / obj_width * slider_size
-                    new_width = int(obj_width * resize_scale)
-                    new_height = int(obj_height * resize_scale)
+                        max_occlusion = width * obj_height / float(height * obj_width)
+                    
+                    if max_occlusion >= slider_size:
+                        # Do not need to stretch and change obj_ratio.
+                        new_width = (slider_size * width * height * obj_width / float(obj_height)) ** 0.5
+                        new_height = (slider_size * width * height * obj_height / float(obj_width)) ** 0.5
+                    else:
+                        # Need to stretch and change obj_ratio.
+                        if ratio >= obj_ratio:
+                            new_width = width * slider_size
+                            new_height = height
+                        else:
+                            new_width = width
+                            new_height = height * slider_size
+                    new_width = int(new_width)
+                    new_height = int(new_height)
                     if new_width == 0:
                         new_width = 1
                     if new_height == 0:
                         new_height = 1
+                        
                     random_obj = random_obj.resize((new_width, new_height), Image.ANTIALIAS)
                     
-                    rangex = [rect[0], rect[2] - random_obj.size[0]]
-                    if rangex[1] < rangex[0]:
-                        rangex[1] = rangex[0]
-                        
-                    rangey = [rect[1], rect[3] - random_obj.size[1]]
-                    if rangey[1] < rangey[0]:
-                        rangey[1] = rangey[0]
-                    top_left = (random.randint(rangex[0], rangex[1]), random.randint(rangey[0], rangey[1]))
+                    top_left = (random.randint(rect[0], rect[2] - random_obj.size[0]),\
+                                random.randint(rect[1], rect[3] - random_obj.size[1]))
+                    
                     img.paste(random_obj, top_left, random_obj)
                     
                 datum_path = '{}_{}_{}_{}_{}.jpeg'.format(path, type_str, rect_i, int(100 * slider_size), num)
                 img.save(datum_path)
-                f.write('{} {}\n'.format(datum_path, str(class_id)))              
-                    
-                    
-    
+                f.write('{} {}\n'.format(datum_path, str(class_id))) 
             
 image_path = imagenet_root + 'ILSVRC2015/Data/CLS-LOC/train/'
 annotation_path =  imagenet_root + 'ILSVRC2015/Annotations/CLS-LOC/train/'
