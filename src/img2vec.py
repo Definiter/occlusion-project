@@ -48,13 +48,6 @@ test_net = caffe.Net(result_root + 'model/finetune_alexnet_{}_{}/img2vec_{}_{}.p
                 .format(model_type_str, model_name, model_type_str, model_name),
                 caffe.TEST)
 
-transformer = caffe.io.Transformer({'data': test_net.blobs['data'].data.shape})
-transformer.set_transpose('data', (2,0,1))
-# Below is the reason of false color: add single color to image, rather than add mean image to image.
-transformer.set_mean('data', np.load(caffe_root + 'python/caffe/imagenet/ilsvrc_2012_mean.npy').mean(1).mean(1)) # mean pixel
-transformer.set_raw_scale('data', 255)  # the reference model operates on images in [0,255] range instead of [0,1]
-transformer.set_channel_swap('data', (2,1,0))  # the reference model has channels in BGR order instead of RGB
-
 image_sum = 0
 test_file = open('{}dataset/test_{}_{}.txt'.format(imagenet_root, test_type_str, test_name), 'r')
 image_sum = len(test_file.readlines())
@@ -80,15 +73,6 @@ for i in range(image_sum):
         estimated_time = time.strftime("%H:%M:%S", time.gmtime(estimated))
         print '[{}/{}] {:5}/{:5}: {} {}'.format(now_time, estimated_time, i + 1, image_sum, predict_id, label)
     
-    '''
-    print label
-    print predict_id
-    print index_in_lmdb
-    print vector
-    plt.imshow(transformer.deprocess('data', test_net.blobs['data'].data[0]))
-    plt.show()
-    break
-    '''
 with open(result_root + 'img2vec/vectors_{}_{}_{}_{}.pickle'.format(model_type_str, model_name, test_type_str, test_name), 'wb') as f:
     cPickle.dump(vectors, f)
     
