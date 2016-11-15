@@ -20,8 +20,8 @@ model_type_str = args.model_type_str
 
 '''
 gpu = 0
-model_name = '0'
-model_type_str = 'nocrop'
+model_name = 'all'
+model_type_str = 'crop_img'
 '''
 
 ####################

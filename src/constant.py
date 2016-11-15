@@ -2,6 +2,8 @@ imagenet_root = '/data2/haow3/data/imagenet/'
 shapenet_root = '/data2/haow3/data/shapenet/'
 result_root = '/data2/haow3/result/'
 caffe_root = '/home/haow3/software/caffe-rc3/'
+synthesizing_root = "/home/haow3/occlusion-project/src/synthesizing/"
+
 
 # 20 classes
 '''

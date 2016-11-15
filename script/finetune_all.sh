@@ -1,4 +1,4 @@
-model_type_strs=(every)
+model_type_strs=(every_grs)
 
 for model_type_str in "${model_type_strs[@]}"
 do

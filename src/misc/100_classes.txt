@@ -1,0 +1,100 @@
+0 goldfish, Carassius auratus
+1 great grey owl, great gray owl, Strix nebulosa
+2 American chameleon, anole, Anolis carolinensis
+3 agama
+4 green snake, grass snake
+5 hummingbird
+6 tusker
+7 koala, koala bear, kangaroo bear, native bear, Phascolarctos cinereus
+8 conch
+9 white stork, Ciconia ciconia
+10 crane
+11 oystercatcher, oyster catcher
+12 Chihuahua
+13 Pekinese, Pekingese, Peke
+14 Norfolk terrier
+15 Norwich terrier
+16 golden retriever
+17 German shepherd, German shepherd dog, German police dog, alsatian
+18 boxer
+19 Eskimo dog, husky
+20 Pomeranian
+21 hyena, hyaena
+22 Arctic fox, white fox, Alopex lagopus
+23 Siamese cat, Siamese
+24 tiger, Panthera tigris
+25 mongoose
+26 ground beetle, carabid beetle
+27 long-horned beetle, longicorn, longicorn beetle
+28 cabbage butterfly
+29 sea cucumber, holothurian
+30 porcupine, hedgehog
+31 Arabian camel, dromedary, Camelus dromedarius
+32 mink
+33 polecat, fitch, foulmart, foumart, Mustela putorius
+34 three-toed sloth, ai, Bradypus tridactylus
+35 gibbon, Hylobates lar
+36 baboon
+37 howler monkey, howler
+38 squirrel monkey, Saimiri sciureus
+39 Indian elephant, Elephas maximus
+40 lesser panda, red panda, panda, bear cat, cat bear, Ailurus fulgens
+41 giant panda, panda, panda bear, coon bear, Ailuropoda melanoleuca
+42 abacus
+43 amphibian, amphibious vehicle
+44 apron
+45 balance beam, beam
+46 bikini, two-piece
+47 bottlecap
+48 bow tie, bow-tie, bowtie
+49 cassette
+50 church, church building
+51 cinema, movie theater, movie theatre, movie house, picture palace
+52 croquet ball
+53 dial telephone, dial phone
+54 electric fan, blower
+55 flute, transverse flute
+56 fur coat
+57 hard disc, hard disk, fixed disk
+58 holster
+59 hook, claw
+60 lifeboat
+61 loupe, jeweler's loupe
+62 microphone, mike
+63 miniskirt, mini
+64 mobile home, manufactured home
+65 Model T
+66 mortarboard
+67 oboe, hautboy, hautbois
+68 odometer, hodometer, mileometer, milometer
+69 oxcart
+70 padlock
+71 parking meter
+72 poncho
+73 rain barrel
+74 rule, ruler
+75 running shoe
+76 saltshaker, salt shaker
+77 sax, saxophone
+78 scoreboard
+79 seat belt, seatbelt
+80 sewing machine
+81 shower cap
+82 ski mask
+83 sock
+84 sunglasses, dark glasses, shades
+85 sunscreen, sunblock, sun blocker
+86 triumphal arch
+87 volleyball
+88 washbasin, handbasin, washbowl, lavabo, wash-hand basin
+89 window screen
+90 yawl
+91 yurt
+92 traffic light, traffic signal, stoplight
+93 hotdog, hot dog, red hot
+94 artichoke, globe artichoke
+95 banana
+96 jackfruit, jak, jack
+97 dough
+98 meat loaf, meatloaf
+99 alp
