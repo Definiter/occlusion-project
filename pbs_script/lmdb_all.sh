@@ -1,5 +1,5 @@
 func_strs=(train test val)
-type_strs=(every_grs)
+type_strs=(crop_image)
 names=(all)
 
 for func_str in "${func_strs[@]}"
@@ -12,7 +12,7 @@ do
             echo $func_str
             echo $type_str
             echo $name
-            qsub -q taising -v func_str=${func_str},type_str=${type_str},name=${name} -l nodes=compute-1-1 -N ${func_str}_${type_str}_${name}_lmdb pbs_lmdb.script
+            qsub -v func_str=${func_str},type_str=${type_str},name=${name} -N ${func_str}_${type_str}_${name}_lmdb pbs_lmdb.script
             echo ---------
         done
     done

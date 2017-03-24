@@ -20,7 +20,7 @@ parser.add_argument('--type_str', required=True)
 #parser.add_argument('--gpu', required=False)
 args = parser.parse_args()
 
-#type_str = 'crop_img' # {1k_}[crop | nocrop | crop_obj | nocrop_obj | aperture | crop_img ]
+#type_str = 'crop_image' # {1k_}[crop | nocrop | crop_obj | nocrop_obj | aperture | crop_img | crop_image ]
 type_str = args.type_str
 
 #dataset = [(0.0, 0),  (0.1, 10), (0.2, 10), (0.3, 10), (0.4, 10),\
@@ -65,6 +65,7 @@ train_files = []
 val_files = []
 test_files = []
 
+
 for (slider_size, slider_num) in dataset:
     percent = str(int(100 * slider_size))
     f = open('{}dataset/train_{}_{}.txt'.format(imagenet_root, type_str, percent), 'w')
@@ -107,7 +108,7 @@ if 'obj' in type_str:
     print "{} object occluders loaded.".format(len(obj_images))
     
 '''
-# On-the-fly generation.
+# On-the-fly generation of "crop_img".
 # Initialization for 'imagination'.
 if type_str == 'crop_img':
     act_args = lambda: None
@@ -225,6 +226,7 @@ def generate_datum(img_orig, path, f, class_id, rects, slider_size, slider_num):
                 img.save(datum_path)
                 f.write('{} {}\n'.format(datum_path, str(class_id)))   
                 
+    
                 
     if type_str == 'aperture' or type_str == '1k_aperture':
         if slider_size == 0: # All gray.
@@ -405,6 +407,55 @@ def generate_datum(img_orig, path, f, class_id, rects, slider_size, slider_num):
                     datum_path = '{}_{}_{}_{}_{}.jpeg'.format(path, type_str, rect_i, str(int(100 * slider_size)), i)
                     img.save(datum_path)
                     f.write('{} {}\n'.format(datum_path, str(class_id)))
+                    
+    if type_str == "crop_image":
+        if slider_size == 0:
+            for rect_i, rect in enumerate(rects):
+                img = img_orig.copy()
+                img = img.crop(rect)
+                datum_path = '{}_{}_{}_0_0.jpeg'.format(path, type_str, rect_i)
+                img.save(datum_path)
+                f.write('{} {}\n'.format(datum_path, str(class_id)))
+        else:
+            for rect_i, rect in enumerate(rects):
+                for i in range(slider_num):
+                    img = img_orig.copy()
+                    d = ImageDraw.Draw(img)
+                    slider_width = int((rect[2] - rect[0]) * math.sqrt(slider_size))
+                    slider_height = int((rect[3] - rect[1]) * math.sqrt(slider_size))
+                    subrect = [0, 0, 0, 0]
+                    subrect[0] = random.randint(rect[0], rect[2] - slider_width)
+                    subrect[1] = random.randint(rect[1], rect[3] - slider_height)
+                    subrect[2] = subrect[0] + slider_width
+                    subrect[3] = subrect[1] + slider_height
+                    
+                    # Get another image.
+                    another_index = random.randint(0, len(synset_names) - 1)
+                    another_synset_name = synset_names[another_index]
+                    
+                    # Read bounding box.
+                    bbx_file = open(annotation_path + another_synset_name + '/' + intersection_names[another_index][i] + '.xml')
+                    xmltree = ET.parse(bbx_file)
+                    objects = xmltree.findall('object')
+                    another_rects = []
+                    for obj in objects:
+                        bbx = obj.find('bndbox')
+                        another_rects.append([int(it.text) for it in bbx])
+                    another_rect = another_rects[random.randint(0, len(another_rects) - 1)]
+
+                    another_image = Image.open(image_path + another_synset_name + '/' + intersection_names[another_index][i] + '.JPEG')
+                    if another_image.mode != "RGB":
+                        another_image = another_image.convert("RGB")
+                    
+                    another_obj = another_image.crop(another_rect)
+                    
+                    
+                    
+                    img.paste(another_obj.resize((slider_width, slider_height)), (subrect[0], subrect[1]))
+                    img = img.crop(rect)
+                    datum_path = '{}_{}_{}_{}_{}.jpeg'.format(path, type_str, rect_i, str(int(100 * slider_size)), i)
+                    img.save(datum_path)
+                    f.write('{} {}\n'.format(datum_path, str(class_id)))
             
     
     '''
@@ -479,12 +530,16 @@ dataset_sum = training_dataset_size + validation_dataset_size + test_dataset_siz
 all_sum = len(synset_names) * dataset_sum
 print all_sum
 
+intersection_names = {}
+
 for synset_index, synset_name in enumerate(synset_names):
     image_names = os.listdir(image_path + synset_name)
     annotation_names = os.listdir(annotation_path + synset_name)
     n1 = [os.path.splitext(n)[0] for n in image_names]
     n2 = [os.path.splitext(n)[0] for n in annotation_names]
-    intersection_names = list(set(n1) & set(n2))
+    intersection_names[synset_index] = list(set(n1) & set(n2))
+
+for synset_index, synset_name in enumerate(synset_names):
     for i in range(dataset_sum):
         if (i + 1) % 100 == 0:
             second = int(time.time() - start_time)
@@ -494,9 +549,9 @@ for synset_index, synset_name in enumerate(synset_names):
             estimated = int(float(all_sum) / now_sum * second)
             estimated_time = time.strftime("%H:%M:%S", time.gmtime(estimated))
             estimated_day = estimated / 3600 / 24
-            print '[{}/{} {}]Processing synset [{}/{}], image [{}/{}]: {}'.format(now_time, estimated_day, estimated_time, synset_index + 1, len(synset_names), i + 1, dataset_sum, intersection_names[i])
+            print '[{}/{} {}]Processing synset [{}/{}], image [{}/{}]: {}'.format(now_time, estimated_day, estimated_time, synset_index + 1, len(synset_names), i + 1, dataset_sum, intersection_names[synset_index][i])
         # Read bounding box.
-        bbx_file = open(annotation_path + synset_name + '/' + intersection_names[i] + '.xml')
+        bbx_file = open(annotation_path + synset_name + '/' + intersection_names[synset_index][i] + '.xml')
         xmltree = ET.parse(bbx_file)
         objects = xmltree.findall('object')
         rects = []
@@ -504,7 +559,7 @@ for synset_index, synset_name in enumerate(synset_names):
             bbx = obj.find('bndbox')
             rects.append([int(it.text) for it in bbx])
             
-        img_orig = Image.open(image_path + synset_name + '/' + intersection_names[i] + '.JPEG')
+        img_orig = Image.open(image_path + synset_name + '/' + intersection_names[synset_index][i] + '.JPEG')
         if img_orig.mode != "RGB":
             img_orig = img_orig.convert("RGB")
             
@@ -515,17 +570,17 @@ for synset_index, synset_name in enumerate(synset_names):
         
         if i < training_dataset_size: # Training dataset. 
             for index, (slider_size, slider_num) in enumerate(dataset):
-                generate_datum(img_orig, '{}{}'.format(train_folders[index], intersection_names[i]), \
+                generate_datum(img_orig, '{}{}'.format(train_folders[index], intersection_names[synset_index][i]), \
                                train_files[index], class_id, rects, slider_size, slider_num)
         elif i < training_dataset_size + validation_dataset_size: # Validation dataset
             for index, (slider_size, slider_num) in enumerate(dataset):
-                generate_datum(img_orig, '{}{}'.format(val_folders[index], intersection_names[i]), \
+                generate_datum(img_orig, '{}{}'.format(val_folders[index], intersection_names[synset_index][i]), \
                                val_files[index], class_id, rects, slider_size, slider_num)
         else: # Test dataset.
             for index, (slider_size, slider_num) in enumerate(dataset):
-                generate_datum(img_orig, '{}{}'.format(test_folders[index], intersection_names[i]), \
+                generate_datum(img_orig, '{}{}'.format(test_folders[index], intersection_names[synset_index][i]), \
                                test_files[index], class_id, rects, slider_size, slider_num)
-                               
+
 for f in train_files:
     f.close()
 for f in test_files:
