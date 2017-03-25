@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+#SBATCH --nodes=1
+#SBATCH --cpus-per-task=10
+#SBATCH --time=4-0:00:00
+#SBATCH --mem=0
+#SBATCH --gres=gpu:1
+
+python ~/occlusion-project/src/finetune.py --gpu=${gpu} --model_name=${model_name} --model_type_str=${model_type_str} 

@@ -1,4 +1,0 @@
-#PBS -S /bin/bash
-#PBS -l walltime=96:00:00
-
-python ~/occlusion-project/src/dataset.py --type_str=${type_str} --dataset_index=${dataset_index}

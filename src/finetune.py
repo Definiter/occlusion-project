@@ -26,6 +26,8 @@ model_type_str = 'crop_img'
 
 ####################
 
+print 'Processing: finetune_alexnet_{}_{}'.format(model_type_str, model_name), 'on GPU', gpu, ',', model_type_str
+
 import caffe
 
 niter = 10000
@@ -37,7 +39,6 @@ val_accuracy = {}
 caffe.set_device(gpu)
 caffe.set_mode_gpu()
 
-print 'Processing: finetune_alexnet_{}_{}'.format(model_type_str, model_name), 'on GPU', gpu, ',', model_type_str
 
 solver = caffe.SGDSolver(result_root + 'model/finetune_alexnet_{}_{}/solver.prototxt'.format(model_type_str, model_name))
 solver.net.copy_from(result_root + 'model/bvlc_alexnet/bvlc_alexnet.caffemodel')
