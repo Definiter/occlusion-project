@@ -1,5 +1,7 @@
 data
+data_demo
 result
+result_demo
 src/.ipynb_checkpoints
 *.o*
 *.e*
